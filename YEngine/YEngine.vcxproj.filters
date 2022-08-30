@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{f5fae4cf-c093-459c-be2c-028e6dedc975}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\assets">
+      <UniqueIdentifier>{e0eacdb5-47fa-4a16-927e-921b72132fe5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\assets\shaders">
+      <UniqueIdentifier>{f322844c-bd0e-4e75-80e1-7a996ec7695e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Camera">
+      <UniqueIdentifier>{981758cf-cb35-4faf-97aa-b47830d18b37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Components">
+      <UniqueIdentifier>{13b9a0c8-0e9c-49b0-9884-0d3991cf76f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Graphics">
+      <UniqueIdentifier>{eb66bf58-27b9-4b90-972e-81f0aec439e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Graphics\imgui">
+      <UniqueIdentifier>{c18eb6fc-7c62-48ba-84fe-fb119d61210a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Input">
+      <UniqueIdentifier>{58fe5047-8abd-46c8-9b5f-001754615933}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Log">
+      <UniqueIdentifier>{f9e7ab83-e071-4668-9f90-81aee28f6be1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Macros">
+      <UniqueIdentifier>{0176226c-f04b-4c7f-ba6e-95c5bf7b4eba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Parser">
+      <UniqueIdentifier>{6152d04d-2abb-4798-82a1-ca9a9b302676}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Parser\Bindable">
+      <UniqueIdentifier>{445f9695-f396-4004-b8c3-65be73dce4fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Parser\Drawable">
+      <UniqueIdentifier>{232cd782-444d-49ec-a4c3-e385e19d2fc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Includes">
+      <UniqueIdentifier>{91e41902-e3f2-483b-8b56-46c3e490feec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Includes\DirectXTK">
+      <UniqueIdentifier>{75c81d0d-c1ba-42ba-9f48-e3b8580e1af1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\imgui">
+      <UniqueIdentifier>{4a7a1518-2d3a-465c-8aa0-77a537f39c57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\assets\images">
+      <UniqueIdentifier>{089dccbd-de46-4989-95ba-c0e6d3f55c18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Includes\dxtex">
+      <UniqueIdentifier>{c8921fd5-0e23-40f5-9f50-067262e86547}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Font">
+      <UniqueIdentifier>{34f1c22e-b1a8-4ea2-8b0c-b2018d7f6343}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Engine\Exception.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\FileSystem.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Timer.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Window.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\WinMain.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\App.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Camera\Camera.cpp">
+      <Filter>Engine\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Components\PointLight.cpp">
+      <Filter>Engine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Graphics\imgui\ImguiManager.cpp">
+      <Filter>Engine\Graphics\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Graphics\Graphics.cpp">
+      <Filter>Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Graphics\DxgiInfoManager.cpp">
+      <Filter>Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Input\Keyboard.cpp">
+      <Filter>Engine\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Input\Mouse.cpp">
+      <Filter>Engine\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Log\Log.cpp">
+      <Filter>Engine\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Macros\dxerr.cpp">
+      <Filter>Engine\Macros</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Parser\Mesh.cpp">
+      <Filter>Engine\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Parser\Drawable\Drawable.cpp">
+      <Filter>Engine\Parser\Drawable</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Parser\Bindable\Bindable.cpp">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Parser\Bindable\IndexBuffer.cpp">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Parser\Bindable\InputLayout.cpp">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Parser\Bindable\Shaders.cpp">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Parser\Bindable\Topology.cpp">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Parser\Bindable\TransformCbuf.cpp">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Parser\Bindable\Vertex.cpp">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Parser\Bindable\VertexBuffer.cpp">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Parser\Drawable\Texture.cpp">
+      <Filter>Engine\Parser\Drawable</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Parser\Bindable\Sampler.cpp">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\imgui\imgui_draw.cpp">
+      <Filter>Engine\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\imgui\imgui_impl_dx11.cpp">
+      <Filter>Engine\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\imgui\imgui_impl_win32.cpp">
+      <Filter>Engine\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\imgui\imgui_tables.cpp">
+      <Filter>Engine\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\imgui\imgui_widgets.cpp">
+      <Filter>Engine\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\imgui\imgui.cpp">
+      <Filter>Engine\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\imgui\imgui_demo.cpp">
+      <Filter>Engine\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Components\TestPlane.cpp">
+      <Filter>Engine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Parser\Bindable\TransformCbufDoubleboi.cpp">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Components\TestCube.cpp">
+      <Filter>Engine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Graphics\Surface.cpp">
+      <Filter>Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Components\SolidSphere.cpp">
+      <Filter>Engine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\XM.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Parser\TexturePreprocessor.cpp">
+      <Filter>Engine\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Graphics\Blender.cpp">
+      <Filter>Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Graphics\Rasterizer.cpp">
+      <Filter>Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Graphics\DrawText.cpp">
+      <Filter>Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Font\Font.cpp">
+      <Filter>Engine\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Font\FontImporter.cpp">
+      <Filter>Engine\Font</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine\Exception.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\FileSystem.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\YMath.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Timer.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Window.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\App.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Color.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Camera\Camera.h">
+      <Filter>Engine\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Components\PointLight.h">
+      <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics\imgui\ImguiManager.h">
+      <Filter>Engine\Graphics\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics\DxgiInfoManager.h">
+      <Filter>Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics\Graphics.h">
+      <Filter>Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Input\Keyboard.h">
+      <Filter>Engine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Input\Mouse.h">
+      <Filter>Engine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Log\Log.h">
+      <Filter>Engine\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Macros\dxerr.h">
+      <Filter>Engine\Macros</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Macros\GraphicsThrowMacros.h">
+      <Filter>Engine\Macros</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Macros\macros.h">
+      <Filter>Engine\Macros</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Macros\WindowsThrowMacros.h">
+      <Filter>Engine\Macros</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Macros\defines.h">
+      <Filter>Engine\Macros</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Parser\Mesh.h">
+      <Filter>Engine\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Parser\Drawable\Drawable.h">
+      <Filter>Engine\Parser\Drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Parser\Bindable\Bindable.h">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Parser\Bindable\ConstantBuffers.h">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Parser\Bindable\IndexBuffer.h">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Parser\Bindable\IndexedTriangleList.h">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Parser\Bindable\InputLayout.h">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Parser\Bindable\Shaders.h">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Parser\Bindable\Topology.h">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Parser\Bindable\TransformCbuf.h">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Parser\Bindable\Vertex.h">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Parser\Bindable\VertexBuffer.h">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Parser\Drawable\Texture.h">
+      <Filter>Engine\Parser\Drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Parser\Bindable\Sampler.h">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\imgui\imgui_impl_dx11.h">
+      <Filter>Engine\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\imgui\imgui_impl_win32.h">
+      <Filter>Engine\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\imgui\imgui_internal.h">
+      <Filter>Engine\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\imgui\imstb_rectpack.h">
+      <Filter>Engine\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\imgui\imstb_textedit.h">
+      <Filter>Engine\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\imgui\imstb_truetype.h">
+      <Filter>Engine\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\imgui\imconfig.h">
+      <Filter>Engine\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\imgui\imgui.h">
+      <Filter>Engine\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Parser\Bindable\BindableCodex.h">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Components\TestPlane.h">
+      <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Components\Plane.h">
+      <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Parser\Bindable\TransformCbufDoubleboi.h">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Components\TestCube.h">
+      <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Components\Cube.h">
+      <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics\Surface.h">
+      <Filter>Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Includes\dxtex\include\dxtex\BCDirectCompute.h">
+      <Filter>Engine\Includes\dxtex</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Includes\dxtex\include\dxtex\d3dx12.h">
+      <Filter>Engine\Includes\dxtex</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Includes\dxtex\include\dxtex\DDS.h">
+      <Filter>Engine\Includes\dxtex</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Includes\dxtex\include\dxtex\DirectXTex.h">
+      <Filter>Engine\Includes\dxtex</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Includes\dxtex\include\dxtex\DirectXTexP.h">
+      <Filter>Engine\Includes\dxtex</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Includes\dxtex\include\dxtex\filters.h">
+      <Filter>Engine\Includes\dxtex</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Includes\dxtex\include\dxtex\scoped.h">
+      <Filter>Engine\Includes\dxtex</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Includes\dxtex\include\dxtex\BC.h">
+      <Filter>Engine\Includes\dxtex</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Components\SolidSphere.h">
+      <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Components\Sphere.h">
+      <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\XM.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Parser\TexturePreprocessor.h">
+      <Filter>Engine\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics\Blender.h">
+      <Filter>Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics\Rasterizer.h">
+      <Filter>Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics\DrawText.h">
+      <Filter>Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Font\Font.h">
+      <Filter>Engine\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Font\FontImporter.h">
+      <Filter>Engine\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Font\Glyph.h">
+      <Filter>Engine\Font</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Engine\Macros\DXGetErrorDescription.inl">
+      <Filter>Engine\Macros</Filter>
+    </None>
+    <None Include="Engine\Macros\DXGetErrorString.inl">
+      <Filter>Engine\Macros</Filter>
+    </None>
+    <None Include="Engine\Macros\DXTrace.inl">
+      <Filter>Engine\Macros</Filter>
+    </None>
+    <None Include="Engine\Includes\dxtex\include\dxtex\DirectXTex.inl">
+      <Filter>Engine\Includes\dxtex</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Engine\assets\shaders\PhongPS.hlsl">
+      <Filter>Engine\assets\shaders</Filter>
+    </Text>
+    <Text Include="Engine\assets\shaders\PhongVS.hlsl">
+      <Filter>Engine\assets\shaders</Filter>
+    </Text>
+    <Text Include="Engine\assets\shaders\SolidPS.hlsl">
+      <Filter>Engine\assets\shaders</Filter>
+    </Text>
+    <Text Include="Engine\assets\shaders\SolidVS.hlsl">
+      <Filter>Engine\assets\shaders</Filter>
+    </Text>
+    <Text Include="Engine\assets\shaders\PhongPSSpecNormalMap.hlsl">
+      <Filter>Engine\assets\shaders</Filter>
+    </Text>
+    <Text Include="Engine\assets\shaders\PhongPSNormalMap.hlsl">
+      <Filter>Engine\assets\shaders</Filter>
+    </Text>
+    <Text Include="Engine\assets\shaders\PhongVSNormalMap.hlsl">
+      <Filter>Engine\assets\shaders</Filter>
+    </Text>
+    <Text Include="Engine\assets\shaders\PhongPSNormalMapObject.hlsl">
+      <Filter>Engine\assets\shaders</Filter>
+    </Text>
+    <Text Include="Engine\assets\shaders\PhongVSNotex.hlsl">
+      <Filter>Engine\assets\shaders</Filter>
+    </Text>
+    <Text Include="Engine\assets\shaders\PhongPSNotex.hlsl">
+      <Filter>Engine\assets\shaders</Filter>
+    </Text>
+    <Text Include="Engine\assets\shaders\ShaderOps.hlsl">
+      <Filter>Engine\assets\shaders</Filter>
+    </Text>
+    <Text Include="Engine\assets\shaders\PointLight.hlsl">
+      <Filter>Engine\assets\shaders</Filter>
+    </Text>
+    <Text Include="Engine\assets\shaders\Transform.hlsl">
+      <Filter>Engine\assets\shaders</Filter>
+    </Text>
+    <Text Include="Engine\assets\shaders\LightVectorData.hlsl">
+      <Filter>Engine\assets\shaders</Filter>
+    </Text>
+    <Text Include="Engine\assets\shaders\PhongPSSpec.hlsl">
+      <Filter>Engine\assets\shaders</Filter>
+    </Text>
+    <Text Include="Engine\assets\shaders\PhongPSSpecNormMask.hlsl">
+      <Filter>Engine\assets\shaders</Filter>
+    </Text>
+    <Text Include="Engine\assets\shaders\TextVS.hlsl">
+      <Filter>Engine\assets\shaders</Filter>
+    </Text>
+    <Text Include="Engine\assets\shaders\TextPS.hlsl">
+      <Filter>Engine\assets\shaders</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

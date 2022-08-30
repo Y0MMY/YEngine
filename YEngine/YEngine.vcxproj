@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Engine\App.cpp" />
+    <ClCompile Include="Engine\Camera\Camera.cpp" />
+    <ClCompile Include="Engine\Components\PointLight.cpp" />
+    <ClCompile Include="Engine\Components\SolidSphere.cpp" />
+    <ClCompile Include="Engine\Components\TestCube.cpp" />
+    <ClCompile Include="Engine\Components\TestPlane.cpp" />
+    <ClCompile Include="Engine\Exception.cpp" />
+    <ClCompile Include="Engine\FileSystem.cpp" />
+    <ClCompile Include="Engine\Font\Font.cpp" />
+    <ClCompile Include="Engine\Font\FontImporter.cpp" />
+    <ClCompile Include="Engine\Graphics\Blender.cpp" />
+    <ClCompile Include="Engine\Graphics\DrawText.cpp" />
+    <ClCompile Include="Engine\Graphics\DxgiInfoManager.cpp" />
+    <ClCompile Include="Engine\Graphics\Graphics.cpp" />
+    <ClCompile Include="Engine\Graphics\imgui\ImguiManager.cpp" />
+    <ClCompile Include="Engine\Graphics\Rasterizer.cpp" />
+    <ClCompile Include="Engine\Graphics\Surface.cpp" />
+    <ClCompile Include="Engine\imgui\imgui.cpp" />
+    <ClCompile Include="Engine\imgui\imgui_demo.cpp" />
+    <ClCompile Include="Engine\imgui\imgui_draw.cpp" />
+    <ClCompile Include="Engine\imgui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="Engine\imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="Engine\imgui\imgui_tables.cpp" />
+    <ClCompile Include="Engine\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="Engine\Input\Keyboard.cpp" />
+    <ClCompile Include="Engine\Input\Mouse.cpp" />
+    <ClCompile Include="Engine\Log\Log.cpp" />
+    <ClCompile Include="Engine\Macros\dxerr.cpp" />
+    <ClCompile Include="Engine\Parser\Bindable\Bindable.cpp" />
+    <ClCompile Include="Engine\Parser\Bindable\IndexBuffer.cpp" />
+    <ClCompile Include="Engine\Parser\Bindable\InputLayout.cpp" />
+    <ClCompile Include="Engine\Parser\Bindable\Sampler.cpp" />
+    <ClCompile Include="Engine\Parser\Bindable\Shaders.cpp" />
+    <ClCompile Include="Engine\Parser\Bindable\Topology.cpp" />
+    <ClCompile Include="Engine\Parser\Bindable\TransformCbuf.cpp" />
+    <ClCompile Include="Engine\Parser\Bindable\TransformCbufDoubleboi.cpp" />
+    <ClCompile Include="Engine\Parser\Bindable\Vertex.cpp" />
+    <ClCompile Include="Engine\Parser\Bindable\VertexBuffer.cpp" />
+    <ClCompile Include="Engine\Parser\Drawable\Drawable.cpp" />
+    <ClCompile Include="Engine\Parser\Drawable\Texture.cpp" />
+    <ClCompile Include="Engine\Parser\Mesh.cpp" />
+    <ClCompile Include="Engine\Parser\TexturePreprocessor.cpp" />
+    <ClCompile Include="Engine\Timer.cpp" />
+    <ClCompile Include="Engine\Window.cpp" />
+    <ClCompile Include="Engine\WinMain.cpp" />
+    <ClCompile Include="Engine\XM.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine\App.h" />
+    <ClInclude Include="Engine\Camera\Camera.h" />
+    <ClInclude Include="Engine\Color.h" />
+    <ClInclude Include="Engine\Components\Cube.h" />
+    <ClInclude Include="Engine\Components\Plane.h" />
+    <ClInclude Include="Engine\Components\PointLight.h" />
+    <ClInclude Include="Engine\Components\SolidSphere.h" />
+    <ClInclude Include="Engine\Components\Sphere.h" />
+    <ClInclude Include="Engine\Components\TestCube.h" />
+    <ClInclude Include="Engine\Components\TestPlane.h" />
+    <ClInclude Include="Engine\Exception.h" />
+    <ClInclude Include="Engine\FileSystem.h" />
+    <ClInclude Include="Engine\Font\Font.h" />
+    <ClInclude Include="Engine\Font\FontImporter.h" />
+    <ClInclude Include="Engine\Font\Glyph.h" />
+    <ClInclude Include="Engine\Graphics\Blender.h" />
+    <ClInclude Include="Engine\Graphics\DrawText.h" />
+    <ClInclude Include="Engine\Graphics\DxgiInfoManager.h" />
+    <ClInclude Include="Engine\Graphics\Graphics.h" />
+    <ClInclude Include="Engine\Graphics\imgui\ImguiManager.h" />
+    <ClInclude Include="Engine\Graphics\Rasterizer.h" />
+    <ClInclude Include="Engine\Graphics\Surface.h" />
+    <ClInclude Include="Engine\imgui\imconfig.h" />
+    <ClInclude Include="Engine\imgui\imgui.h" />
+    <ClInclude Include="Engine\imgui\imgui_impl_dx11.h" />
+    <ClInclude Include="Engine\imgui\imgui_impl_win32.h" />
+    <ClInclude Include="Engine\imgui\imgui_internal.h" />
+    <ClInclude Include="Engine\imgui\imstb_rectpack.h" />
+    <ClInclude Include="Engine\imgui\imstb_textedit.h" />
+    <ClInclude Include="Engine\imgui\imstb_truetype.h" />
+    <ClInclude Include="Engine\Includes\dxtex\include\dxtex\BC.h" />
+    <ClInclude Include="Engine\Includes\dxtex\include\dxtex\BCDirectCompute.h" />
+    <ClInclude Include="Engine\Includes\dxtex\include\dxtex\d3dx12.h" />
+    <ClInclude Include="Engine\Includes\dxtex\include\dxtex\DDS.h" />
+    <ClInclude Include="Engine\Includes\dxtex\include\dxtex\DirectXTex.h" />
+    <ClInclude Include="Engine\Includes\dxtex\include\dxtex\DirectXTexP.h" />
+    <ClInclude Include="Engine\Includes\dxtex\include\dxtex\filters.h" />
+    <ClInclude Include="Engine\Includes\dxtex\include\dxtex\scoped.h" />
+    <ClInclude Include="Engine\Input\Keyboard.h" />
+    <ClInclude Include="Engine\Input\Mouse.h" />
+    <ClInclude Include="Engine\Log\Log.h" />
+    <ClInclude Include="Engine\Macros\defines.h" />
+    <ClInclude Include="Engine\Macros\dxerr.h" />
+    <ClInclude Include="Engine\Macros\GraphicsThrowMacros.h" />
+    <ClInclude Include="Engine\Macros\macros.h" />
+    <ClInclude Include="Engine\Macros\WindowsThrowMacros.h" />
+    <ClInclude Include="Engine\Parser\Bindable\BindableCodex.h" />
+    <ClInclude Include="Engine\Parser\Bindable\Sampler.h" />
+    <ClInclude Include="Engine\Parser\Bindable\TransformCbufDoubleboi.h" />
+    <ClInclude Include="Engine\Parser\Drawable\Texture.h" />
+    <ClInclude Include="Engine\Parser\TexturePreprocessor.h" />
+    <ClInclude Include="Engine\XM.h" />
+    <ClInclude Include="Engine\YMath.h" />
+    <ClInclude Include="Engine\Parser\Bindable\Bindable.h" />
+    <ClInclude Include="Engine\Parser\Bindable\ConstantBuffers.h" />
+    <ClInclude Include="Engine\Parser\Bindable\IndexBuffer.h" />
+    <ClInclude Include="Engine\Parser\Bindable\IndexedTriangleList.h" />
+    <ClInclude Include="Engine\Parser\Bindable\InputLayout.h" />
+    <ClInclude Include="Engine\Parser\Bindable\Shaders.h" />
+    <ClInclude Include="Engine\Parser\Bindable\Topology.h" />
+    <ClInclude Include="Engine\Parser\Bindable\TransformCbuf.h" />
+    <ClInclude Include="Engine\Parser\Bindable\Vertex.h" />
+    <ClInclude Include="Engine\Parser\Bindable\VertexBuffer.h" />
+    <ClInclude Include="Engine\Parser\Drawable\Drawable.h" />
+    <ClInclude Include="Engine\Parser\Mesh.h" />
+    <ClInclude Include="Engine\Timer.h" />
+    <ClInclude Include="Engine\Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Engine\assets\shaders\PhongPS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4.0</ShaderModel>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Engine/assets/shaders/bin/%(Filename).cso</ObjectFileOutput>
+      <FileType>Document</FileType>
+    </Text>
+    <Text Include="Engine\assets\shaders\PhongVS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4.0</ShaderModel>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Engine/assets/shaders/bin/%(Filename).cso</ObjectFileOutput>
+      <FileType>Document</FileType>
+    </Text>
+    <Text Include="Engine\assets\shaders\SolidPS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4.0</ShaderModel>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Engine/assets/shaders/bin/%(Filename).cso</ObjectFileOutput>
+      <FileType>Document</FileType>
+    </Text>
+    <Text Include="Engine\assets\shaders\SolidVS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4.0</ShaderModel>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Engine/assets/shaders/bin/%(Filename).cso</ObjectFileOutput>
+      <FileType>Document</FileType>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Engine\Includes\dxtex\include\dxtex\DirectXTex.inl" />
+    <None Include="Engine\Macros\DXGetErrorDescription.inl" />
+    <None Include="Engine\Macros\DXGetErrorString.inl" />
+    <None Include="Engine\Macros\DXTrace.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Engine\assets\shaders\PhongPSSpecNormalMap.hlsl">
+      <FileType>Document</FileType>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Engine\assets\shaders\PhongPSNormalMap.hlsl">
+      <FileType>Document</FileType>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Engine\assets\shaders\PhongVSNormalMap.hlsl">
+      <FileType>Document</FileType>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Engine\assets\shaders\PhongPSNormalMapObject.hlsl">
+      <FileType>Document</FileType>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Engine\assets\shaders\PhongPSNotex.hlsl">
+      <FileType>Document</FileType>
+    </Text>
+    <Text Include="Engine\assets\shaders\PhongVSNotex.hlsl">
+      <FileType>Document</FileType>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Engine\assets\shaders\PointLight.hlsl">
+      <FileType>Document</FileType>
+    </Text>
+    <Text Include="Engine\assets\shaders\ShaderOps.hlsl">
+      <FileType>Document</FileType>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Engine\assets\shaders\Transform.hlsl">
+      <FileType>Document</FileType>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Engine\assets\shaders\LightVectorData.hlsl">
+      <FileType>Document</FileType>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Engine\assets\shaders\PhongPSSpec.hlsl">
+      <FileType>Document</FileType>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Engine\assets\shaders\PhongPSSpecNormMask.hlsl">
+      <FileType>Document</FileType>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Engine\assets\shaders\TextPS.hlsl">
+      <FileType>Document</FileType>
+    </Text>
+    <Text Include="Engine\assets\shaders\TextVS.hlsl">
+      <FileType>Document</FileType>
+    </Text>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{713305a1-1bcc-4889-b240-45ef6ac2996f}</ProjectGuid>
+    <RootNamespace>YEngine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>bin\$(Configuration)\</OutDir>
+    <IntDir>bin\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;IS_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)\YEngine\Engine</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
+      <AdditionalLibraryDirectories>$(SolutionDir)\YEngine\Engine\Includes\dxtex\bin\Debug</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\Microsoft.XAudio2.Redist.1.2.8\build\native\Microsoft.XAudio2.Redist.targets" Condition="Exists('..\packages\Microsoft.XAudio2.Redist.1.2.8\build\native\Microsoft.XAudio2.Redist.targets')" />
+    <Import Project="..\packages\directxtk_desktop_2019.2022.5.10.4\build\native\directxtk_desktop_2019.targets" Condition="Exists('..\packages\directxtk_desktop_2019.2022.5.10.4\build\native\directxtk_desktop_2019.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.XAudio2.Redist.1.2.8\build\native\Microsoft.XAudio2.Redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.XAudio2.Redist.1.2.8\build\native\Microsoft.XAudio2.Redist.targets'))" />
+    <Error Condition="!Exists('..\packages\directxtk_desktop_2019.2022.5.10.4\build\native\directxtk_desktop_2019.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\directxtk_desktop_2019.2022.5.10.4\build\native\directxtk_desktop_2019.targets'))" />
+  </Target>
+</Project>
