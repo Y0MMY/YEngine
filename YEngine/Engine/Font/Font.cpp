@@ -24,7 +24,7 @@ void Font::SetSize( const uint32_t size )
 {
     m_font_size = Clamp<uint32_t>(size, 8, 50);
     
-    auto size2 = 0.00019f;
+    auto size2 = 0.00009f;
 
     using Elements = Dvtx::VertexLayout::ElementType;
     for (int i = 0; i < fi.vbuf.Size(); i++)

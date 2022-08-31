@@ -64,17 +64,11 @@ namespace Bind
 		++count;
 	}
 
-	int GetNumMipLevels(int width, int height)
+	UINT Texture::CalculateNumberOfMipLevels(UINT width, UINT height) noexcept
 	{
-		int numLevels = 1;
-		while ((width > 1) || (height > 1))
-		{
-			width = std::max(width / 2, 1);
-			height = std::max(height / 2, 1);
-			++numLevels;
-		}
-
-		return numLevels;
+		const float xSteps = std::ceil(log2((float)width));
+		const float ySteps = std::ceil(log2((float)height));
+		return (UINT)std::max(xSteps, ySteps);
 	}
 
 	Texture::Texture( Graphics& gfx, uint32_t atlas_width, uint32_t atlas_height, uint32_t size, std::vector<std::byte>& data, UINT slot )
@@ -86,7 +80,7 @@ namespace Bind
 		D3D11_TEXTURE2D_DESC textureDesc = {};
 		textureDesc.Width = (UINT)atlas_width;
 		textureDesc.Height = (UINT)atlas_height;
-		textureDesc.MipLevels = GetNumMipLevels(atlas_width, atlas_height);
+		textureDesc.MipLevels = CalculateNumberOfMipLevels(atlas_width, atlas_height);
 		textureDesc.ArraySize = size;
 		textureDesc.Format = DXGI_FORMAT_R8_UNORM;
 		textureDesc.SampleDesc.Count = 1;
@@ -100,7 +94,7 @@ namespace Bind
 		std::vector<D3D11_SUBRESOURCE_DATA> sSubData;
 		for (auto i = 0; i < size; i++)
 		{
-			for (uint32_t index_mip = 0; index_mip < GetNumMipLevels(atlas_width, atlas_height); index_mip++)
+			for (uint32_t index_mip = 0; index_mip < CalculateNumberOfMipLevels(atlas_width, atlas_height); index_mip++)
 			{
 				uint32_t mip_width = atlas_width >> index_mip;
 				D3D11_SUBRESOURCE_DATA& subresource_data = sSubData.emplace_back(D3D11_SUBRESOURCE_DATA{});
@@ -124,7 +118,7 @@ namespace Bind
 		srvDesc.Format = textureDesc.Format;
 		srvDesc.ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2DARRAY;
 		srvDesc.Texture2DArray.MostDetailedMip = 0;
-		srvDesc.Texture2DArray.MipLevels = GetNumMipLevels(atlas_width, atlas_height);
+		srvDesc.Texture2DArray.MipLevels = CalculateNumberOfMipLevels(atlas_width, atlas_height);
 		srvDesc.Texture2DArray.FirstArraySlice = 0;
 		srvDesc.Texture2DArray.ArraySize = textureDesc.ArraySize;
 

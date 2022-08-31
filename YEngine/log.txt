@@ -1,14 +1,5 @@
-Лог создан: 08/30/22 20:55:41.
+Лог создан: 08/31/22 01:40:04.
 ---------------------------------------
 
-20:55:42::325: [34m[DEBUG]: Bind::VertexShader::VertexShader: VertexShader [Path: Engine\assets\shaders\SolidVS.hlsl]
-20:55:42::328: [34m[DEBUG]: Bind::PixelShader::PixelShader: PixelShader [Path: Engine\assets\shaders\SolidPS.hlsl]
-20:55:43::1170: [34m[DEBUG]: Bind::VertexShader::VertexShader: VertexShader [Path: Engine\assets\shaders\TextVS.hlsl]
-20:55:43::1172: [34m[DEBUG]: Bind::PixelShader::PixelShader: PixelShader [Path: Engine\assets\shaders\TextPS.hlsl]
-20:55:43::1180: [32m[INFO]: [ App::App ] : Window was created. 1600 - 900
-20:55:43::1180: [32m[INFO]: [ App::App ] : Imgui was initialazed
-20:55:43::1180: [32m[INFO]: [ App::App ] : GPU: NVIDIA GeForce GT 730
-20:55:43::1180: [34m[DEBUG]: App::App: Textures: 0
-
----------------------------------------
-Конец лога: 08/30/22 20:55:44.
+01:40:04::366: [34m[DEBUG]: Bind::VertexShader::VertexShader: VertexShader [Path: Engine\assets\shaders\SolidVS.hlsl]
+01:40:04::370: [34m[DEBUG]: Bind::PixelShader::PixelShader: PixelShader [Path: Engine\assets\shaders\SolidPS.hlsl]
