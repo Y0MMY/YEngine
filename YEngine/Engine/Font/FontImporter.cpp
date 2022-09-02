@@ -222,7 +222,7 @@ FontImporter::FontImporter(const std::string& file_path)
     :
     vbuf(std::move(
         Dvtx::VertexLayout{}
-        .Append(Dvtx::VertexLayout::Position2D)
+        .Append(Dvtx::VertexLayout::Position3D)
         .Append(Dvtx::VertexLayout::Float4Color)
         .Append(Dvtx::VertexLayout::TextPOS)
         //.Append(Dvtx::VertexLayout::Texture2D)
@@ -280,11 +280,7 @@ bool FontImporter::LoadFromFile( Graphics& gfx,Font* font,const std::string& fil
 
     // Set outline size
     const uint32_t outline_size = (font->GetOutline() != Font_Outline_None) ? font->GetOutlineSize() : 0;
-    const bool outline = outline_size != 0;
-    if (outline)
-    {
-        FT_Stroker_Set(m_stroker, outline_size * 64, FT_STROKER_LINECAP_ROUND, FT_STROKER_LINEJOIN_ROUND, 0);
-    }
+
     g_glyph_load_flags = GetLoadFlags(font);
 
     // Get the size of the font atlas texture (if an outline is requested, it accounts for a big enough atlas)
@@ -294,9 +290,6 @@ bool FontImporter::LoadFromFile( Graphics& gfx,Font* font,const std::string& fil
     uint32_t atlas_cell_height = 0;
     GetTextureAtlasDimensions(&atlas_width, &atlas_height, &atlas_cell_width, &atlas_cell_height, ft_font, outline_size);
 
-    this->col = colums;
-    this->rows = _rows;
-
 
     // Atlas for text
     std::vector<RHI_Texture_Slice> texture_data_atlas;
@@ -304,15 +297,7 @@ bool FontImporter::LoadFromFile( Graphics& gfx,Font* font,const std::string& fil
     mip_atlas.resize(atlas_width * atlas_height);
     mip_atlas.reserve(mip_atlas.size());
 
-    // Atlas for outline (if needed)
-    std::vector<RHI_Texture_Slice> texture_data_atlas_outline;
-    std::vector<std::byte>& mip_atlas_outline = texture_data_atlas_outline.emplace_back().mips.emplace_back().bytes;
-    if (outline_size != 0)
-    {
-        mip_atlas_outline.resize(mip_atlas.size());
-        mip_atlas_outline.reserve(mip_atlas.size());
-    }
-
+  
     // Go through each glyph
     Vector2 pen = 0.0f;
     bool writting_started = false;
@@ -321,13 +306,6 @@ bool FontImporter::LoadFromFile( Graphics& gfx,Font* font,const std::string& fil
     {
         // Load text bitmap
         GetBitmap(&bitmap_text, font, nullptr, ft_font, char_code);
-
-        // Load glyph bitmap (if needeD)
-        ft_bitmap bitmap_outline;
-        if (outline)
-        {
-            GetBitmap(&bitmap_outline, font, m_stroker, ft_font, char_code);
-        }
 
         // Advance pen
         // Whitespace characters don't have a buffer and don't write on the atlas, hence no need to advance the pen in these cases.
@@ -349,11 +327,6 @@ bool FontImporter::LoadFromFile( Graphics& gfx,Font* font,const std::string& fil
         {
             copy_to_atlas(mip_atlas, bitmap_text, pen, atlas_width, outline_size);
 
-            if (bitmap_outline.buffer)
-            {
-               copy_to_atlas(mip_atlas_outline, bitmap_outline, pen, atlas_width, 0);
-            }
-
             writting_started = true;
         }
         // Get glyph
@@ -366,7 +339,7 @@ bool FontImporter::LoadFromFile( Graphics& gfx,Font* font,const std::string& fil
     {
         vbuf.Clear();
         using namespace Bind;
-        vbuf.EmplaceBack( XMFLOAT2{ 1,1 }, XMFLOAT4{  }, XMFLOAT3{ } );
+        vbuf.EmplaceBack( XMFLOAT3{ 1,1,1 }, XMFLOAT4{  }, XMFLOAT3{ } );
 
         std::vector<unsigned short> m_indices;
         m_indices.push_back(0);
@@ -391,14 +364,8 @@ bool FontImporter::LoadFromFile( Graphics& gfx,Font* font,const std::string& fil
 
         AddBind( Blender::Resolve( gfx, true ) );
 	    AddBind( Topology::Resolve(gfx, D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST ) );
-	    AddBind( std::make_shared<TransformCbuf>( gfx,*this,0u ) );
-
-
         
-        if (outline_size != 0)
-        {
-            //font->SetAtlasOutline(move(static_pointer_cast<RHI_Texture>(make_shared<RHI_Texture2D>(m_context, atlas_width, atlas_height, RHI_Format_R8_Unorm, texture_data_atlas_outline))));
-        }
+	 
     }
     return true;
 }

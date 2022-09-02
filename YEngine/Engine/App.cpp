@@ -8,14 +8,14 @@
 
 namespace dx = DirectX;
 
-std::string text = "Hello\nFPS:\nTextures :";
+std::string text = "Hello\nFPS:\nsdf";
 
 App::App( const std::string& commandLine )
 	:
 	commandLine( commandLine ),
 	wnd( 1600, 900, "Y0MMY Engine v 0.1 beta" ),
 	light( wnd.Gfx() ),
-	font( wnd.Gfx(), "Engine\\assets\\fonts\\Roboto-SemiMedium.ttf", 15, {1,1,1,1} )
+	font( wnd.Gfx(), "Engine\\assets\\fonts\\Calibri.ttf", 15, {1,1,1,1} )
 {
 	LOG_INFO( "Window was created. %i - %i", 1600, 900 );
 	LOG_INFO( "Imgui was initialazed" );
