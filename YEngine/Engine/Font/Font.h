@@ -33,7 +33,7 @@ public:
 	Font( Graphics& gfx,const std::string& file_path, const int font_size, const XMFLOAT4& color );
 	bool LoadFromFile( Graphics& gfx, const std::string& file_path );
 	void SetSize( const uint32_t size );
-	void SetText(  Graphics& gfx,std::string& text, Vector2 position, float scale, XMFLOAT4 color = {} );
+	void SetText(  Graphics& gfx,std::string& text, Vector2 position, XMFLOAT4 color = {} );
 	uint32_t GetSize()												{ return m_font_size; }
 	auto GetForceAutohint()                                         const { return m_force_autohint; }
 	Font_Hinting_Type GetHinting()                                  const { return m_hinting; }
@@ -44,8 +44,7 @@ public:
 	DirectX::XMFLOAT4 GetColor() 									{ return m_color;}
 	~Font() 
 	{
-		/*FT_Done_Face(face);
-		FT_Done_FreeType(library);*/
+		//fi.~FontImporter();
 	}
 	FontImporter fi;
 private:

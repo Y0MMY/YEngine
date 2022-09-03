@@ -24,7 +24,7 @@ void Font::SetSize( const uint32_t size )
 {
     m_font_size = Clamp<uint32_t>(size, 8, 50);
     
-    auto size2 = 0.0009f;
+	auto size_new = size / 250000.f;
 
     using Elements = Dvtx::VertexLayout::ElementType;
     for (int i = 0; i < fi.vbuf.Size(); i++)
@@ -32,7 +32,7 @@ void Font::SetSize( const uint32_t size )
         auto& pos = fi.vbuf[i].Attr<Elements::Position3D>();
         DirectX::XMStoreFloat3(
             &pos,
-            DirectX::XMVector3Transform( DirectX::XMLoadFloat3(&pos),  XMMatrixScaling( (float)size2, (float)size2, (float)size2) )
+            DirectX::XMVector3Transform( DirectX::XMLoadFloat3(&pos),  XMMatrixScaling( (float)size_new, (float)size_new, (float)size_new) )
         );
     }
 }
@@ -57,14 +57,16 @@ bool Font::LoadFromFile( Graphics& gfx, const std::string& file_path )
 	return true;
 }
 
-void Font::SetText( Graphics& gfx, std::string& text, Vector2 position, float scale, XMFLOAT4 color )
+void Font::SetText( Graphics& gfx, std::string& text, Vector2 position, XMFLOAT4 color )
 {
+	if( !text.size() ) return;
 
 	Vector2 pen = position;
-	this->text = text;
 
 	m_indices.clear();
+
 	uint32_t i = 0;
+
 	for (auto text_char : text)
 	{
 		Glyph& glyph = m_glyphs[text_char];
@@ -91,42 +93,35 @@ void Font::SetText( Graphics& gfx, std::string& text, Vector2 position, float sc
 		}
 		else // Any other char
 		{
-			char character = text[i] - '!'; // first character is '!'
+			char character = text[i] - '!';
 
-            /*const float xw = 1.f / 10.5f ;
-			const float yw = 1.f / 10.f;*/
+			auto char_size = XMFLOAT2( glyph.width + 20.f, glyph.height + 100.f );
+			auto texture_size = XMFLOAT2{ 939.f, ATLAS_WIDTH }; // this shouldn't be hardcoded
 
-			/*int row = (character / 10);
-			int col = (character % 10);
-
-			float x = col * xw ;
-			float y = row * yw;*/
-
-
-			auto char_size = XMFLOAT2(glyph.width, glyph.height);
-			auto texture_size = XMFLOAT2{ 512.f, 512.f }; // this shouldn't be hardcoded
-
-			const float xw = char_size.x / texture_size.x;
+			const float xw = (char_size.x) / texture_size.x;
 			const float yw = char_size.y / texture_size.y;
 
 			float x = 0.f;
 			float y = 0.f;
 
-            fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x, pen.y + glyph.offset_y,0.0f/* 0.0f, glyph.uv_x_left, glyph.uv_y_top*/ },XMFLOAT4 { 121,232,13,4 }, XMFLOAT3 { x, y,(float)character } );       // top left
-            fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x + glyph.width, pen.y + glyph.offset_y - glyph.height,0.0f /*0.0f, glyph.uv_x_right, glyph.uv_y_bottom*/ },XMFLOAT4 { 231,132,3,4 }, XMFLOAT3  {x + xw, y + yw,(float)character } );    // bottom right
-            fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x, pen.y + glyph.offset_y - glyph.height,0.0f/*, 0.0f, glyph.uv_x_left, glyph.uv_y_bottom*/ },XMFLOAT4 { 121,232,33,4 }, XMFLOAT3 {x, y + yw,(float)character } );    // Dbottom left
+
+            fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x,					pen.y + glyph.offset_y,					0.0f},		XMFLOAT4 { color },			XMFLOAT4 { x, y,(float)character,0 } );       // top left
+            fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x + glyph.width,	pen.y + glyph.offset_y - glyph.height,	0.0f  },	XMFLOAT4 { color },			XMFLOAT4  {x + xw, y + yw,(float)character,0 } );    // bottom right
+            fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x,					pen.y + glyph.offset_y - glyph.height,	0.0f },		XMFLOAT4 { color },			XMFLOAT4 {x, y + yw,(float)character,0 } );    // Dbottom left
             // Second triangle in quad.
-            fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x, pen.y + glyph.offset_y,0.0f/*, 0.0f, glyph.uv_x_left, glyph.uv_y_top*/ },XMFLOAT4 { 111,232,233,4 }, XMFLOAT3 { x, y,(float)character });       // top left
-            fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x + glyph.width, pen.y + glyph.offset_y,0.0f/*, 0.0f, glyph.uv_x_right, glyph.uv_y_top*/ },XMFLOAT4 { 121,212,33,4 }, XMFLOAT3 { x + xw, y,(float)character } );       // top right
-            fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x + glyph.width, pen.y + glyph.offset_y - glyph.height,0.0f/*, 0.0f, glyph.uv_x_right, glyph.uv_y_bottom*/ },XMFLOAT4 { 111,232,33,4 }, XMFLOAT3 {x + xw, y + yw,(float)character } );    // bottom right
+            fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x,					pen.y + glyph.offset_y,					0.0f },		XMFLOAT4 { color },			XMFLOAT4 { x, y,(float)character,0 });       // top left
+            fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x + glyph.width,	pen.y + glyph.offset_y,					0.0f  },	XMFLOAT4 { color },			XMFLOAT4 { x + xw, y,(float)character,0 } );       // top right
+            fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x + glyph.width,	pen.y + glyph.offset_y - glyph.height,	0.0f },		XMFLOAT4 { color },			XMFLOAT4 {x + xw, y + yw,(float)character,0 } );    // bottom right
 
             // Advance
             pen.x += glyph.horizontal_advance;
         }
 		++i;
 	}
+
 	SetSize( GetSize() );
 	m_indices.clear();
+
 	for (auto c = 0; c < fi.vbuf.Size(); c++)
 	{
 		m_indices.push_back(c);

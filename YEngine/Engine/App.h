@@ -34,4 +34,5 @@ private:
 	Font font;
 	std::ostringstream fontTextBuffer;
 	std::string fontText;
+
 };

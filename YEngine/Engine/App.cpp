@@ -6,9 +6,9 @@
 #include <Parser/Bindable/Shaders.h>
 #include <Parser/Drawable/Texture.h>
 
+
 namespace dx = DirectX;
 
-std::string text = "Hello\nFPS:\nsdf";
 
 App::App( const std::string& commandLine )
 	:
@@ -23,7 +23,7 @@ App::App( const std::string& commandLine )
 
 	//bluePlane.SetPos( cam.GetPos() );
 
-	font.SetSize( 9 );
+	font.SetSize( 1 );
 
 	font.SetPos(cam.GetPos());
 	wnd.Gfx().SetProjection( dx::XMMatrixPerspectiveLH(1.0f, 3.0f / 4.0f, 0.5f, 400.0f) );
@@ -31,6 +31,8 @@ App::App( const std::string& commandLine )
 
 	LOG_DEBUG( "Textures: %d", Bind::Texture::GetCountTextures() );
 	
+
+
 }
 
 int App::Go()
@@ -55,6 +57,14 @@ void App::DoFrame()
 
 	Binds();
 	DrawModels();
+
+	fontTextBuffer.str("");
+
+	fontTextBuffer.clear();
+
+	fontTextBuffer << "FPS: 232ms\nTextures: 23";
+
+	fontText = fontTextBuffer.str();
 
 	while( const auto e = wnd.kbd.ReadKey() )
 	{
@@ -111,7 +121,7 @@ void App::DoFrame()
 		if( wnd.kbd.KeyIsPressed( 'F' ) )
 		{
 			cam.Translate( { 0.0f,-dt,0.0f } );
-			text = "Thx my friend for helP!";
+			fontText = "Thx my friend for helP!";
 		}
 	}
 
@@ -141,7 +151,7 @@ void App::DrawModels()
 	/*sponza.Draw(wnd.Gfx());
 	bluePlane.Draw( wnd.Gfx() );*/
 
-	font.SetText( wnd.Gfx(), text , { -1000,1000 }, 123, { 123,124,132,112 } );
+	font.SetText( wnd.Gfx(), fontText, { 0, 0 }, { 121,232,13,4 } );
 }
 
 void App::ShowWindows()

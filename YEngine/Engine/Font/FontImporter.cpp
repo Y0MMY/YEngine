@@ -6,11 +6,6 @@
 #include <Graphics/Blender.h>
 
 
-// Properties of the texture font atlas which holds all visible ASCII characters
-static const uint32_t GLYPH_START = 32;
-static const uint32_t GLYPH_END = 127;
-static const uint32_t ATLAS_WIDTH = 512;
-
 uint32_t colums;
 uint32_t _rows;
 
@@ -272,7 +267,7 @@ bool FontImporter::LoadFromFile( Graphics& gfx,Font* font,const std::string& fil
     }
 
     // Set font size
-    if (!handle_error(FT_Set_Pixel_Sizes(ft_font, 0, 512)))
+    if (!handle_error(FT_Set_Pixel_Sizes(ft_font, 0, ATLAS_WIDTH)))
     {
         handle_error(FT_Done_Face(ft_font));
         return false;
@@ -339,7 +334,7 @@ bool FontImporter::LoadFromFile( Graphics& gfx,Font* font,const std::string& fil
     {
         vbuf.Clear();
         using namespace Bind;
-        vbuf.EmplaceBack( XMFLOAT3{ 1,1,1 }, XMFLOAT4{  }, XMFLOAT3{ } );
+        vbuf.EmplaceBack( XMFLOAT3{ 1,1,1 }, XMFLOAT4{  }, XMFLOAT4{ } );
 
         std::vector<unsigned short> m_indices;
         m_indices.push_back(0);
@@ -358,7 +353,7 @@ bool FontImporter::LoadFromFile( Graphics& gfx,Font* font,const std::string& fil
 
 	    AddBind( PixelShader::Resolve( gfx,"Engine\\assets\\shaders\\TextPS.hlsl" ) );
 
-	    AddBind( PixelConstantBuffer<PSMaterialConstant>::Resolve( gfx,pmc,1u ) );
+	    AddBind( PixelConstantBuffer<PSMaterialConstant>::Resolve( gfx,pmc ) );
 
 	    AddBind( InputLayout::Resolve(gfx, vbuf.GetLayout(), pvsbc ) );
 
@@ -369,4 +364,3 @@ bool FontImporter::LoadFromFile( Graphics& gfx,Font* font,const std::string& fil
     }
     return true;
 }
-

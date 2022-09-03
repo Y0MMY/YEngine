@@ -13,6 +13,12 @@
 #include <Includes/freetype/freetype/ftstroke.h>
 #include FT_FREETYPE_H
 
+// Properties of the texture font atlas which holds all visible ASCII characters
+static const uint32_t GLYPH_START = 32;
+static const uint32_t GLYPH_END = 127;
+static const uint32_t ATLAS_WIDTH = 1000;
+
+
 inline bool handle_error(int error_code)
     {
         if (error_code == FT_Err_Ok)
@@ -152,7 +158,7 @@ private:
     struct PSMaterialConstant
     {
 
-        DirectX::XMFLOAT4 color = {122,122,122,122};
+        DirectX::XMFLOAT4 color = { 121,112,112,112 };
     } pmc;
 
 };

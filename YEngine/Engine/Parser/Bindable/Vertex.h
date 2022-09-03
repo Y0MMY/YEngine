@@ -84,7 +84,7 @@ namespace Dvtx
 		};
 		template<> struct Map<TextPOS>
 		{
-			using SysType = DirectX::XMFLOAT3;
+			using SysType = DirectX::XMFLOAT4;
 			static constexpr DXGI_FORMAT dxgiFormat = DXGI_FORMAT_R32G32B32A32_FLOAT;
 			static constexpr const char* semantic = "Texcoord";
 			static constexpr const char* code = "T3";
