@@ -189,9 +189,6 @@
     <ClCompile Include="Engine\Graphics\Rasterizer.cpp">
       <Filter>Engine\Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\Graphics\DrawText.cpp">
-      <Filter>Engine\Graphics</Filter>
-    </ClCompile>
     <ClCompile Include="Engine\Font\Font.cpp">
       <Filter>Engine\Font</Filter>
     </ClCompile>
@@ -387,9 +384,6 @@
       <Filter>Engine\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Graphics\Rasterizer.h">
-      <Filter>Engine\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\Graphics\DrawText.h">
       <Filter>Engine\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Font\Font.h">

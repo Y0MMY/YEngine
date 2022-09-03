@@ -6,14 +6,13 @@
 #include "Camera/Camera.h"
 #include "Components/PointLight.h"
 #include "Components/TestPlane.h"
-#include <Graphics/DrawText.h>
-#include <Font/Font.h>
+#include "Font/Font.h"
 
 
 class App
 {
 public:
-	App( const std::string& commandLine = "" );
+	App(const std::string& commandLine = "");
 	// master frame / message loop
 	int Go();
 private:
@@ -29,10 +28,17 @@ private:
 	Timer timer;
 	Camera cam;
 	PointLight light;
-	/*Model sponza{wnd.Gfx(), MODELSURL "sponza\\sponza.obj",1.0f / 20.0f};
-	TestPlane bluePlane{ wnd.Gfx(),6.0f,{ 0.3f,0.3f,1.0f,0.0f } };*/
+	Model sponza{ wnd.Gfx(), MODELSURL "sponza\\sponza.obj",1.0f / 20.0f };
+	TestPlane bluePlane{ wnd.Gfx(),6.0f,{ 0.3f,0.3f,1.0f,0.0f } };
+
 	Font font;
 	std::ostringstream fontTextBuffer;
 	std::string fontText;
-
+private:
+	DWORD FrameCnt;    // кол-во кадров
+	DWORD TimeElapsed; // промежуток времени
+	float FPS;         // наш фпс
+	DWORD oldTime;
+	DWORD newTime;
+	DWORD deltatime;
 };

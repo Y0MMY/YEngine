@@ -30,7 +30,6 @@
     <ClCompile Include="Engine\Font\Font.cpp" />
     <ClCompile Include="Engine\Font\FontImporter.cpp" />
     <ClCompile Include="Engine\Graphics\Blender.cpp" />
-    <ClCompile Include="Engine\Graphics\DrawText.cpp" />
     <ClCompile Include="Engine\Graphics\DxgiInfoManager.cpp" />
     <ClCompile Include="Engine\Graphics\Graphics.cpp" />
     <ClCompile Include="Engine\Graphics\imgui\ImguiManager.cpp" />
@@ -83,7 +82,6 @@
     <ClInclude Include="Engine\Font\FontImporter.h" />
     <ClInclude Include="Engine\Font\Glyph.h" />
     <ClInclude Include="Engine\Graphics\Blender.h" />
-    <ClInclude Include="Engine\Graphics\DrawText.h" />
     <ClInclude Include="Engine\Graphics\DxgiInfoManager.h" />
     <ClInclude Include="Engine\Graphics\Graphics.h" />
     <ClInclude Include="Engine\Graphics\imgui\ImguiManager.h" />

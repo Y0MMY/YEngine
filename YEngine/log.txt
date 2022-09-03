@@ -1,14 +1,74 @@
-Лог создан: 09/03/22 23:19:21.
+Лог создан: 09/04/22 02:27:26.
 ---------------------------------------
 
-23:19:21::405: [34m[DEBUG]: Bind::VertexShader::VertexShader: VertexShader [Path: Engine\assets\shaders\SolidVS.hlsl]
-23:19:21::408: [34m[DEBUG]: Bind::PixelShader::PixelShader: PixelShader [Path: Engine\assets\shaders\SolidPS.hlsl]
-23:19:21::874: [34m[DEBUG]: Bind::VertexShader::VertexShader: VertexShader [Path: Engine\assets\shaders\TextVS.hlsl]
-23:19:21::875: [34m[DEBUG]: Bind::PixelShader::PixelShader: PixelShader [Path: Engine\assets\shaders\TextPS.hlsl]
-23:19:21::889: [32m[INFO]: [ App::App ] : Window was created. 1600 - 900
-23:19:21::889: [32m[INFO]: [ App::App ] : Imgui was initialazed
-23:19:21::889: [32m[INFO]: [ App::App ] : GPU: NVIDIA GeForce GT 730
-23:19:21::889: [34m[DEBUG]: App::App: Textures: 0
+02:27:26::277: [34m[DEBUG]: Bind::VertexShader::VertexShader: VertexShader [Path: Engine\assets\shaders\SolidVS.hlsl]
+02:27:26::281: [34m[DEBUG]: Bind::PixelShader::PixelShader: PixelShader [Path: Engine\assets\shaders\SolidPS.hlsl]
+02:27:34::8205: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_thorn_diff.png]
+02:27:34::8225: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_thorn_ddn.png]
+02:27:34::8234: [34m[DEBUG]: Bind::VertexShader::VertexShader: VertexShader [Path: Engine\assets\shaders\PhongVSNormalMap.hlsl]
+02:27:34::8237: [34m[DEBUG]: Bind::PixelShader::PixelShader: PixelShader [Path: Engine\assets\shaders\PhongPSNormalMap.hlsl]
+02:27:34::8250: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\vase_plant.png]
+02:27:34::8272: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\vase_plant_NRM.png]
+02:27:34::8330: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\vase_round.png]
+02:27:34::8399: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\vase_round_spec.png]
+02:27:34::8466: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\vase_round_ddn.png]
+02:27:34::8520: [34m[DEBUG]: Bind::PixelShader::PixelShader: PixelShader [Path: Engine\assets\shaders\PhongPSSpecNormalMap.hlsl]
+02:27:34::8532: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\background.png]
+02:27:34::8593: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\background_ddn.png]
+02:27:34::8647: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\spnza_bricks_a_diff.png]
+02:27:35::8714: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\spnza_bricks_a_spec.png]
+02:27:35::8766: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\spnza_bricks_a_ddn.png]
+02:27:35::8818: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_arch_diff.png]
+02:27:35::8879: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_arch_spec.png]
+02:27:35::8930: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_arch_diff_NRM.png]
+02:27:35::8985: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_ceiling_a_diff.png]
+02:27:35::9050: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_ceiling_a_spec.png]
+02:27:35::9105: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_ceiling_a_diff_NRM.png]
+02:27:35::9161: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_column_a_diff.png]
+02:27:35::9233: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_column_a_spec.png]
+02:27:35::9287: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_column_a_ddn.png]
+02:27:35::9348: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_floor_a_diff.png]
+02:27:35::9421: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_floor_a_spec.png]
+02:27:35::9473: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_floor_a_diff_NRM.png]
+02:27:35::9530: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_column_c_diff.png]
+02:27:35::9598: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_column_c_spec.png]
+02:27:35::9649: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_column_c_ddn.png]
+02:27:36::9721: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_details_diff.png]
+02:27:36::9795: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_details_spec.png]
+02:27:36::9847: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_details_diff_NRM.png]
+02:27:36::9924: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_column_b_diff.png]
+02:27:36::9989: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_column_b_spec.png]
+02:27:36::10043: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_column_b_ddn.png]
+02:27:36::10142: [34m[DEBUG]: Bind::VertexShader::VertexShader: VertexShader [Path: Engine\assets\shaders\PhongVSNotex.hlsl]
+02:27:36::10145: [34m[DEBUG]: Bind::PixelShader::PixelShader: PixelShader [Path: Engine\assets\shaders\PhongPSNotex.hlsl]
+02:27:36::10152: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_flagpole_diff.png]
+02:27:36::10216: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_flagpole_spec.png]
+02:27:36::10267: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_flagpole_diff_NRM.png]
+02:27:36::10352: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_fabric_green_diff.png]
+02:27:36::10433: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_fabric_spec.png]
+02:27:36::10482: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_fabric_blue_diff_NRM.png]
+02:27:36::10539: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_fabric_blue_diff.png]
+02:27:36::10610: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_fabric_diff.png]
+02:27:37::10723: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_curtain_blue_diff.png]
+02:27:37::11026: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_curtain_blue_diff_NRM.png]
+02:27:37::11234: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_curtain_diff.png]
+02:27:37::11537: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_curtain_green_diff.png]
+02:27:38::11864: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\chain_texture.png]
+02:27:38::11871: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\chain_texture_ddn.png]
+02:27:38::11888: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\vase_hanging.png]
+02:27:38::11949: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\vase_hanging_NRM.png]
+02:27:38::12043: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\vase_dif.png]
+02:27:38::12109: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\vase_ddn.png]
+02:27:38::12169: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\lion.png]
+02:27:38::12230: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\lion_ddn.png]
+02:27:38::12289: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_roof_diff.png]
+02:27:38::12355: [34m[DEBUG]: Bind::Texture::Texture: Loading Texture [Engine\assets\models\sponza\textures\sponza_roof_diff_NRM.png]
+02:27:39::12914: [34m[DEBUG]: Bind::VertexShader::VertexShader: VertexShader [Path: Engine\assets\shaders\TextVS.hlsl]
+02:27:39::12916: [34m[DEBUG]: Bind::PixelShader::PixelShader: PixelShader [Path: Engine\assets\shaders\TextPS.hlsl]
+02:27:39::12930: [32m[INFO]: [ App::App ] : Window was created. 1600 - 900
+02:27:39::12930: [32m[INFO]: [ App::App ] : Imgui was initialazed
+02:27:39::12930: [32m[INFO]: [ App::App ] : GPU: NVIDIA GeForce GT 730
+02:27:39::12931: [34m[DEBUG]: App::App: Textures: 55
 
 ---------------------------------------
-Конец лога: 09/03/22 23:19:24.
+Конец лога: 09/04/22 02:28:02.

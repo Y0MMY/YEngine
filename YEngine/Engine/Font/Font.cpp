@@ -106,11 +106,11 @@ void Font::SetText( Graphics& gfx, std::string& text, Vector2 position, XMFLOAT4
 
 
             fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x,					pen.y + glyph.offset_y,					0.0f},		XMFLOAT4 { color },			XMFLOAT4 { x, y,(float)character,0 } );       // top left
-            fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x + glyph.width,	pen.y + glyph.offset_y - glyph.height,	0.0f  },	XMFLOAT4 { color },			XMFLOAT4  {x + xw, y + yw,(float)character,0 } );    // bottom right
+            fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x + glyph.width,	pen.y + glyph.offset_y - glyph.height,	0.0f },	XMFLOAT4 { color },			XMFLOAT4  {x + xw, y + yw,(float)character,0 } );    // bottom right
             fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x,					pen.y + glyph.offset_y - glyph.height,	0.0f },		XMFLOAT4 { color },			XMFLOAT4 {x, y + yw,(float)character,0 } );    // Dbottom left
             // Second triangle in quad.
             fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x,					pen.y + glyph.offset_y,					0.0f },		XMFLOAT4 { color },			XMFLOAT4 { x, y,(float)character,0 });       // top left
-            fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x + glyph.width,	pen.y + glyph.offset_y,					0.0f  },	XMFLOAT4 { color },			XMFLOAT4 { x + xw, y,(float)character,0 } );       // top right
+            fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x + glyph.width,	pen.y + glyph.offset_y,					0.0f },	XMFLOAT4 { color },			XMFLOAT4 { x + xw, y,(float)character,0 } );       // top right
             fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x + glyph.width,	pen.y + glyph.offset_y - glyph.height,	0.0f },		XMFLOAT4 { color },			XMFLOAT4 {x + xw, y + yw,(float)character,0 } );    // bottom right
 
             // Advance

@@ -68,6 +68,7 @@ public:
 	void DisableImgui() noexcept;
 	bool IsImguiEnabled() const noexcept;
 	std::string GetGPUName() const noexcept;
+	void SetSync(UINT value)							{ Sync = value; }
 private:
 	bool imguiEnabled = true;
 	DirectX::XMMATRIX projection;
@@ -82,4 +83,5 @@ private:
 	Microsoft::WRL::ComPtr<ID3D11DepthStencilView> pDSV;
 private:
 	std::string nameGPU;
+	UINT Sync = 1u; 
 };

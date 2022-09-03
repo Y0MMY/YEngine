@@ -17,7 +17,7 @@ SamplerState sampler_bilinear_clamp;
 float4 main(PSInput input) : SV_TARGET
 {
     float4 color = float4(0.0f, 0.0f, 0.0f, 1.0f);
-    
+
     color.r = tex_font_atlas.Sample(sampler_bilinear_clamp, input.uv.xyz).r;
     color.g = color.r;
     color.b = color.r;
