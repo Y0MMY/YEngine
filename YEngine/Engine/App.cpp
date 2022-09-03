@@ -11,32 +11,35 @@ namespace dx = DirectX;
 App::App(const std::string& commandLine)
 	:
 	commandLine(commandLine),
-	wnd(1600, 900, "Y0MMY Engine v 0.1 beta"),
-	light(wnd.Gfx()),
-	font( wnd.Gfx(), "Engine\\assets\\fonts\\Calibri.ttf", 15, { 1,1,1,1 } )
+	wnd( WIDTH, HEIGHT, "Y0MMY Engine v 0.1 beta" ),
+	light( wnd.Gfx() ),
+	font( wnd.Gfx(), "Engine\\assets\\fonts\\CalibriBold.ttf", 15, { 1,1,1,1 } ),
+	text_pos (  -( WIDTH * 25)  + 5.0f, HEIGHT * 25 - font.GetSize() - 2.0f )
 {
-	LOG_INFO("Window was created. %i - %i", 1600, 900);
-	LOG_INFO("Imgui was initialazed");
-	LOG_INFO("GPU: %s", wnd.Gfx().GetGPUName().c_str());
+	LOG_INFO( "Window was created. %i - %i", 1600, 900 );
+	LOG_INFO( "Imgui was initialazed" );
+	LOG_INFO( "GPU: %s", wnd.Gfx().GetGPUName().c_str() );
 
-	bluePlane.SetPos(cam.GetPos());
+	bluePlane.SetPos( cam.GetPos() );
 
-	font.SetSize(9);
+	font.SetSize( 9 );
 
-	font.SetPos(cam.GetPos());
+	font.SetPos( cam.GetPos() );
 
-	wnd.Gfx().SetProjection(dx::XMMatrixPerspectiveLH(1.0f, 3.0f / 4.0f, 0.5f, 400.0f));
+	wnd.Gfx().SetProjection( dx::XMMatrixPerspectiveLH( 1.0f, 3.0f / 4.0f, 0.5f, 400.0f ) );
 
-	LOG_DEBUG("Textures: %d", Bind::Texture::GetCountTextures());
+	countTexture = Bind::Texture::GetCountTextures();
+
+	LOG_DEBUG( "Textures: %d", countTexture );
 
 }
 
 int App::Go()
 {
-	while (true)
+	while ( true )
 	{
 		// process all messages pending, but to not block for new messages
-		if (const auto ecode = Window::ProcessMessages())
+		if ( const auto ecode = Window::ProcessMessages() )
 		{
 			// if return optional has value, means we're quitting so return exit code
 			return *ecode;
@@ -57,7 +60,7 @@ void App::DoFrame()
 
 	fontTextBuffer.clear();
 
-	fontTextBuffer << "FPS: " << FPS << "\nTextures: 23";
+	fontTextBuffer << "FPS: " << FPS << "\nTextures: " << countTexture;
 
 	fontText = fontTextBuffer.str();
 
@@ -160,7 +163,7 @@ void App::DrawModels()
 	light.Draw(wnd.Gfx());
 	sponza.Draw(wnd.Gfx());
 
-	font.SetText( wnd.Gfx(), fontText, { -30000, 15000 }, XMFLOAT4( 0.8f, 0.8f, 0.8f, 1.0f ) );
+	font.SetText( wnd.Gfx(), fontText, { text_pos }, XMFLOAT4( 0.8f, 0.8f, 0.8f, 1.0f ) );
 }
 
 void App::ShowWindows()

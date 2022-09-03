@@ -30,10 +30,11 @@ private:
 	PointLight light;
 	Model sponza{ wnd.Gfx(), MODELSURL "sponza\\sponza.obj",1.0f / 20.0f };
 	TestPlane bluePlane{ wnd.Gfx(),6.0f,{ 0.3f,0.3f,1.0f,0.0f } };
-
+private:
 	Font font;
 	std::ostringstream fontTextBuffer;
 	std::string fontText;
+	const Vector2 text_pos;
 private:
 	DWORD FrameCnt;    // кол-во кадров
 	DWORD TimeElapsed; // промежуток времени
@@ -41,4 +42,10 @@ private:
 	DWORD oldTime;
 	DWORD newTime;
 	DWORD deltatime;
+private:
+	UINT countTexture;
+private:
+	UINT WIDTH = 1600u;
+	UINT HEIGHT = 900u;
+
 };
