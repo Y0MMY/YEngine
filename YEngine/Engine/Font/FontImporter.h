@@ -13,6 +13,9 @@
 #include <Includes/freetype/freetype/ftstroke.h>
 #include FT_FREETYPE_H
 
+
+using namespace Math;
+
 // Properties of the texture font atlas which holds all visible ASCII characters
 static const uint32_t GLYPH_START = 32;
 static const uint32_t GLYPH_END = 127;

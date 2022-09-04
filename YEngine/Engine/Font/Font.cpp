@@ -9,6 +9,8 @@
 #define ASCII_NEW_LINE  10
 #define ASCII_SPACE     32
 
+using namespace Math;
+
 Font::Font( Graphics& gfx, const std::string& file_path, const int font_size, const XMFLOAT4& color )
 	:
 	m_char_max_width (0),

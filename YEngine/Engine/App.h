@@ -7,6 +7,7 @@
 #include "Components/PointLight.h"
 #include "Components/TestPlane.h"
 #include "Font/Font.h"
+#include <Profiling/Profiler.h>
 
 
 class App
@@ -34,16 +35,11 @@ private:
 	Font font;
 	std::ostringstream fontTextBuffer;
 	std::string fontText;
-	const Vector2 text_pos;
+	const Math::Vector2 text_pos;
+
+	Engine::Profiler profiler;
 private:
-	DWORD FrameCnt;    // кол-во кадров
-	DWORD TimeElapsed; // промежуток времени
-	float FPS;         // наш фпс
-	DWORD oldTime;
-	DWORD newTime;
-	DWORD deltatime;
-private:
-	UINT countTexture;
+
 private:
 	UINT WIDTH = 1600u;
 	UINT HEIGHT = 900u;

@@ -114,11 +114,6 @@ Graphics::Graphics(UINT width, UINT height, HWND hWnd)
 
 	// init imgui d3d impl
 	ImGui_ImplDX11_Init(pDevice.Get(), pContext.Get());
-
-	DISPLAY_DEVICEA dd;
-	dd.cb = sizeof(DISPLAY_DEVICEA);
-	EnumDisplayDevicesA(NULL, 0, &dd, EDD_GET_DEVICE_INTERFACE_NAME);
-	nameGPU = std::string(dd.DeviceString);
 }
 
 	void Graphics::EndFrame()
@@ -202,10 +197,6 @@ bool Graphics::IsImguiEnabled() const noexcept
 	return imguiEnabled;
 }
 
-std::string Graphics::GetGPUName() const noexcept
-{
-	return nameGPU;
-}
 
 // Graphics exception stuff
 Graphics::HrException::HrException(int line, const char* file, HRESULT hr, std::vector<std::string> infoMsgs) noexcept

@@ -60,6 +60,7 @@
     <ClCompile Include="Engine\Parser\Drawable\Texture.cpp" />
     <ClCompile Include="Engine\Parser\Mesh.cpp" />
     <ClCompile Include="Engine\Parser\TexturePreprocessor.cpp" />
+    <ClCompile Include="Engine\Profiling\Profiler.cpp" />
     <ClCompile Include="Engine\Timer.cpp" />
     <ClCompile Include="Engine\Window.cpp" />
     <ClCompile Include="Engine\WinMain.cpp" />
@@ -116,6 +117,8 @@
     <ClInclude Include="Engine\Parser\Bindable\TransformCbufDoubleboi.h" />
     <ClInclude Include="Engine\Parser\Drawable\Texture.h" />
     <ClInclude Include="Engine\Parser\TexturePreprocessor.h" />
+    <ClInclude Include="Engine\Profiling\D3D11Utility.h" />
+    <ClInclude Include="Engine\Profiling\Profiler.h" />
     <ClInclude Include="Engine\XM.h" />
     <ClInclude Include="Engine\YMath.h" />
     <ClInclude Include="Engine\Parser\Bindable\Bindable.h" />

@@ -58,6 +58,9 @@
     <Filter Include="Engine\Font">
       <UniqueIdentifier>{34f1c22e-b1a8-4ea2-8b0c-b2018d7f6343}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Profiling">
+      <UniqueIdentifier>{7b5179b5-4a8e-4089-be06-0b67809c683e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine\Exception.cpp">
@@ -194,6 +197,9 @@
     </ClCompile>
     <ClCompile Include="Engine\Font\FontImporter.cpp">
       <Filter>Engine\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Profiling\Profiler.cpp">
+      <Filter>Engine\Profiling</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -394,6 +400,12 @@
     </ClInclude>
     <ClInclude Include="Engine\Font\Glyph.h">
       <Filter>Engine\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Profiling\Profiler.h">
+      <Filter>Engine\Profiling</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Profiling\D3D11Utility.h">
+      <Filter>Engine\Profiling</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

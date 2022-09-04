@@ -55,7 +55,7 @@ void Camera::Reset() noexcept
 
 void Camera::Rotate( float dx,float dy ) noexcept
 {
-	yaw = wrap_angle( yaw + dx * rotationSpeed );
+	yaw = Math::wrap_angle( yaw + dx * rotationSpeed );
 	pitch = std::clamp( pitch + dy * rotationSpeed,0.995f * -PI / 2.0f,0.995f * PI / 2.0f );
 }
 
