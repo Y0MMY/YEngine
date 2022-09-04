@@ -21,7 +21,7 @@ namespace Bind
 		void UpdateBindImpl(Graphics& gfx, const Transforms& tf) noexcept;
 		Transforms GetTransforms(Graphics& gfx) noexcept;
 	private:
-		static std::unique_ptr<VertexConstantBuffer<Transforms>> pVcbuf;
+		static std::unique_ptr< VertexConstantBuffer<Transforms> > pVcbuf;
 		const Drawable& parent;
 	};
 }

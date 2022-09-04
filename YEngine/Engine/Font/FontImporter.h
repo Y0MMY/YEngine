@@ -163,5 +163,11 @@ private:
 
         DirectX::XMFLOAT4 color = { 121,112,112,112 };
     } pmc;
+    
+    struct VSResolution
+    {
+        DirectX::XMFLOAT2 resolution = { 1600.f, 900.f };
+        float padding[2];
+    } res;
 
 };

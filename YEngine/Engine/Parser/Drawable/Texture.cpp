@@ -75,7 +75,7 @@ namespace Bind
 		:
 		slot(slot)
 	{
-		INFOMAN(gfx)
+		INFOMAN(gfx);
 
 		D3D11_TEXTURE2D_DESC textureDesc = {};
 		textureDesc.Width = (UINT)atlas_width;
@@ -92,7 +92,7 @@ namespace Bind
 
 
 		std::vector<D3D11_SUBRESOURCE_DATA> sSubData;
-		for (auto i = 0; i < size; i++)
+		for (uint32_t i = 0; i < size; i++)
 		{
 			for (uint32_t index_mip = 0; index_mip < CalculateNumberOfMipLevels(atlas_width, atlas_height); index_mip++)
 			{

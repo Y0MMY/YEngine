@@ -286,9 +286,7 @@ bool FontImporter::LoadFromFile( Graphics& gfx,Font* font,const std::string& fil
     GetTextureAtlasDimensions(&atlas_width, &atlas_height, &atlas_cell_width, &atlas_cell_height, ft_font, outline_size);
 
 
-    // Atlas for text
-    std::vector<RHI_Texture_Slice> texture_data_atlas;
-    std::vector<std::byte>& mip_atlas = texture_data_atlas.emplace_back().mips.emplace_back().bytes;
+    std::vector<std::byte> mip_atlas;
     mip_atlas.resize(atlas_width * atlas_height);
     mip_atlas.reserve(mip_atlas.size());
 
@@ -354,6 +352,8 @@ bool FontImporter::LoadFromFile( Graphics& gfx,Font* font,const std::string& fil
 	    AddBind( PixelShader::Resolve( gfx,"Engine\\assets\\shaders\\TextPS.hlsl" ) );
 
 	    AddBind( PixelConstantBuffer<PSMaterialConstant>::Resolve( gfx,pmc ) );
+
+        AddBind(VertexConstantBuffer<VSResolution>::Resolve( gfx, res ) );
 
 	    AddBind( InputLayout::Resolve(gfx, vbuf.GetLayout(), pvsbc ) );
 

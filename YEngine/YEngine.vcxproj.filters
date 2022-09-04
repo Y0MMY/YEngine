@@ -61,6 +61,9 @@
     <Filter Include="Engine\Profiling">
       <UniqueIdentifier>{7b5179b5-4a8e-4089-be06-0b67809c683e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Scripts">
+      <UniqueIdentifier>{70db1ed6-71d8-42c7-be3e-64ecc2c54e54}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine\Exception.cpp">
@@ -200,6 +203,15 @@
     </ClCompile>
     <ClCompile Include="Engine\Profiling\Profiler.cpp">
       <Filter>Engine\Profiling</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Scripts\ScriptCommander.cpp">
+      <Filter>Engine\Scripts</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Parser\Bindable\DynamicConstant.cpp">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Parser\Bindable\LayoutCodex.cpp">
+      <Filter>Engine\Parser\Bindable</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -406,6 +418,18 @@
     </ClInclude>
     <ClInclude Include="Engine\Profiling\D3D11Utility.h">
       <Filter>Engine\Profiling</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Scripts\ScriptCommander.h">
+      <Filter>Engine\Scripts</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Parser\Bindable\DynamicConstant.h">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Parser\Bindable\LayoutCodex.h">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Parser\Bindable\ConstantBuffersEx.h">
+      <Filter>Engine\Parser\Bindable</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

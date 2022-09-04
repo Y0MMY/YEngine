@@ -8,7 +8,7 @@
 #include "Components/TestPlane.h"
 #include "Font/Font.h"
 #include <Profiling/Profiler.h>
-
+#include "Scripts/ScriptCommander.h"
 
 class App
 {
@@ -31,6 +31,7 @@ private:
 	PointLight light;
 	Model sponza{ wnd.Gfx(), MODELSURL "sponza\\sponza.obj",1.0f / 20.0f };
 	TestPlane bluePlane{ wnd.Gfx(),6.0f,{ 0.3f,0.3f,1.0f,0.0f } };
+	TestPlane redPlane{ wnd.Gfx(),6.0f,{ 1.0f,0.3f,0.3f,0.0f } };
 private:
 	Font font;
 	std::ostringstream fontTextBuffer;

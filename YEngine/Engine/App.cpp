@@ -18,19 +18,12 @@ App::App(const std::string& commandLine)
 {
 
 	bluePlane.SetPos( cam.GetPos() );
+	redPlane.SetPos( cam.GetPos() );
 
 	font.SetSize( 9 );
-
 	font.SetPos( cam.GetPos() );
 
 	wnd.Gfx().SetProjection( dx::XMMatrixPerspectiveLH( 1.0f, 3.0f / 4.0f, 0.5f, 400.0f ) );
-
-	
-
-	LOG_INFO( "Window was created. %i - %i", 1600, 900 );
-	LOG_INFO( "Imgui was initialazed" );
-	//LOG_INFO( "GPU: %s", profiler.GetGPU() );
-	//LOG_DEBUG( "Textures: %d", countTexture );
 
 }
 
@@ -87,33 +80,33 @@ void App::DoFrame()
 
 	if (!wnd.CursorEnabled())
 	{
-		if (wnd.kbd.KeyIsPressed(VK_SHIFT))
+		if (wnd.kbd.KeyIsPressed( VK_SHIFT ) )
 		{
-			cam.Translate({ 0.0f,0.0f,dt * 2 });
+			cam.Translate( { 0.0f,0.0f,dt * 2 } );
 		}
 		if (wnd.kbd.KeyIsPressed('W'))
 		{
-			cam.Translate({ 0.0f,0.0f,dt });
+			cam.Translate( { 0.0f,0.0f,dt } );
 		}
 		if (wnd.kbd.KeyIsPressed('A'))
 		{
-			cam.Translate({ -dt,0.0f,0.0f });
+			cam.Translate( { -dt,0.0f,0.0f } );
 		}
 		if (wnd.kbd.KeyIsPressed('S'))
 		{
-			cam.Translate({ 0.0f,0.0f,-dt });
+			cam.Translate( { 0.0f,0.0f,-dt } );
 		}
 		if (wnd.kbd.KeyIsPressed('D'))
 		{
-			cam.Translate({ dt,0.0f,0.0f });
+			cam.Translate( { dt,0.0f,0.0f } );
 		}
 		if (wnd.kbd.KeyIsPressed('R'))
 		{
-			cam.Translate({ 0.0f,dt,0.0f });
+			cam.Translate( { 0.0f,dt,0.0f } );
 		}
 		if (wnd.kbd.KeyIsPressed('F'))
 		{
-			cam.Translate({ 0.0f,-dt,0.0f });
+			cam.Translate( { 0.0f,-dt,0.0f } );
 		}
 	}
 
@@ -142,8 +135,10 @@ void App::DrawModels()
 
 	light.Draw(wnd.Gfx());
 	sponza.Draw(wnd.Gfx());
+	bluePlane.Draw( wnd.Gfx() );
+	redPlane.Draw( wnd.Gfx() );
 
-	font.SetText( wnd.Gfx(), profiler.GetMetrics(), {text_pos}, XMFLOAT4(0.8f, 0.8f, 0.8f, 1.0f));
+	font.SetText( wnd.Gfx(), profiler.GetMetrics(), { text_pos }, XMFLOAT4(0.8f, 0.8f, 0.8f, 1.0f));
 }
 
 void App::ShowWindows()
@@ -151,5 +146,6 @@ void App::ShowWindows()
 	cam.SpawnControlWindow();
 	light.SpawnControlWindow();
 	sponza.ShowWindow(wnd.Gfx(), "Sponza");
-	bluePlane.SpawnControlWindow(wnd.Gfx());
+	bluePlane.SpawnControlWindow( wnd.Gfx(),"Blue Plane" );
+	redPlane.SpawnControlWindow( wnd.Gfx(),"Red Plane" );
 }

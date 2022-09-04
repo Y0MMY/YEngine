@@ -32,7 +32,7 @@ TestPlane::TestPlane( Graphics& gfx,float size, DirectX::XMFLOAT4 color )
 
 	AddBind( PixelShader::Resolve( gfx,"Engine\\assets\\shaders\\SolidPS.hlsl" ) );
 
-	AddBind( PixelConstantBuffer<PSMaterialConstant>::Resolve( gfx,pmc,1u ) );
+	AddBind( std::make_shared<PixelConstantBuffer<PSMaterialConstant> >( gfx,pmc,1u ) );
 
 	AddBind( InputLayout::Resolve( gfx,model.vertices.GetLayout(),pvsbc ) );
 
@@ -64,9 +64,9 @@ DirectX::XMMATRIX TestPlane::GetTransformXM() const noexcept
 		DirectX::XMMatrixTranslation( pos.x,pos.y,pos.z );
 }
 
-void TestPlane::SpawnControlWindow(Graphics& gfx) noexcept
+void TestPlane::SpawnControlWindow( Graphics& gfx,const std::string& name ) noexcept
 {
-	if (ImGui::Begin("Plane"))
+	if ( ImGui::Begin(  name.c_str() ) )
 	{
 		ImGui::Text("Position");
 		ImGui::SliderFloat("X", &pos.x, -80.0f, 80.0f, "%.1f");
