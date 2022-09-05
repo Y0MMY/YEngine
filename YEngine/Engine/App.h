@@ -9,6 +9,9 @@
 #include "Font/Font.h"
 #include <Profiling/Profiler.h>
 #include "Scripts/ScriptCommander.h"
+#include "Components/TestCube.h"
+#include "Jobber/FrameCommander.h"
+
 
 class App
 {
@@ -19,7 +22,7 @@ public:
 private:
 	void DoFrame();
 	void Binds();
-	void DrawModels();
+	void Execute();
 	void ShowWindows();
 private:
 	std::string commandLine;
@@ -29,9 +32,12 @@ private:
 	Timer timer;
 	Camera cam;
 	PointLight light;
-	Model sponza{ wnd.Gfx(), MODELSURL "sponza\\sponza.obj",1.0f / 20.0f };
-	TestPlane bluePlane{ wnd.Gfx(),6.0f,{ 0.3f,0.3f,1.0f,0.0f } };
-	TestPlane redPlane{ wnd.Gfx(),6.0f,{ 1.0f,0.3f,0.3f,0.0f } };
+	FrameCommander fc;
+	//Model sponza{ wnd.Gfx(), MODELSURL "sponza\\sponza.obj",1.0f / 20.0f };
+	/*TestPlane bluePlane{wnd.Gfx(),6.0f,{0.3f,0.3f,1.0f,0.0f}};
+	TestPlane redPlane{ wnd.Gfx(),6.0f,{ 1.0f,0.3f,0.3f,0.0f } };*/
+	TestCube cube{ wnd.Gfx(),4.0f };
+	TestCube cube2{ wnd.Gfx(),4.0f };
 private:
 	Font font;
 	std::ostringstream fontTextBuffer;

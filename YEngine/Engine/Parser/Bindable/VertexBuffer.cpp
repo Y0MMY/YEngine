@@ -26,6 +26,11 @@ namespace Bind
 		GFX_THROW_INFO( GetDevice( gfx )->CreateBuffer( &bd,&sd,&pVertexBuffer ) );
 	}
 
+	const Dvtx::VertexLayout& VertexBuffer::GetLayout() const noexcept
+	{
+		return layout;
+	}
+
 	void VertexBuffer::Bind( Graphics& gfx ) noexcept
 	{
 		const UINT offset = 0u;

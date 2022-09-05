@@ -149,7 +149,6 @@ public:
     void UpdateBuffers( Graphics& gfx, Dvtx::VertexBuffer& vertices, std::vector<unsigned short> indices );
     void SetPos(DirectX::XMFLOAT3 pos) noexcept;
     Dvtx::VertexBuffer vbuf;
-    UINT col, rows;
 private:
     std::shared_ptr<Bind::IndexBuffer> i;
     std::shared_ptr<Bind::VertexBuffer> v;

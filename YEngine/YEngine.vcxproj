@@ -44,6 +44,10 @@
     <ClCompile Include="Engine\imgui\imgui_widgets.cpp" />
     <ClCompile Include="Engine\Input\Keyboard.cpp" />
     <ClCompile Include="Engine\Input\Mouse.cpp" />
+    <ClCompile Include="Engine\Jobber\Job.cpp" />
+    <ClCompile Include="Engine\Jobber\NullPixelShader.cpp" />
+    <ClCompile Include="Engine\Jobber\Step.cpp" />
+    <ClCompile Include="Engine\Jobber\Technique.cpp" />
     <ClCompile Include="Engine\Log\Log.cpp" />
     <ClCompile Include="Engine\Macros\dxerr.cpp" />
     <ClCompile Include="Engine\Parser\Bindable\Bindable.cpp" />
@@ -64,6 +68,7 @@
     <ClCompile Include="Engine\Parser\TexturePreprocessor.cpp" />
     <ClCompile Include="Engine\Profiling\Profiler.cpp" />
     <ClCompile Include="Engine\Scripts\ScriptCommander.cpp" />
+    <ClCompile Include="Engine\Testing.cpp" />
     <ClCompile Include="Engine\Timer.cpp" />
     <ClCompile Include="Engine\Window.cpp" />
     <ClCompile Include="Engine\WinMain.cpp" />
@@ -71,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\App.h" />
+    <ClInclude Include="Engine\BindableCommon.h" />
     <ClInclude Include="Engine\Camera\Camera.h" />
     <ClInclude Include="Engine\Color.h" />
     <ClInclude Include="Engine\Components\Cube.h" />
@@ -109,6 +115,12 @@
     <ClInclude Include="Engine\Includes\dxtex\include\dxtex\scoped.h" />
     <ClInclude Include="Engine\Input\Keyboard.h" />
     <ClInclude Include="Engine\Input\Mouse.h" />
+    <ClInclude Include="Engine\Jobber\FrameCommander.h" />
+    <ClInclude Include="Engine\Jobber\Job.h" />
+    <ClInclude Include="Engine\Jobber\NullPixelShader.h" />
+    <ClInclude Include="Engine\Jobber\Pass.h" />
+    <ClInclude Include="Engine\Jobber\Step.h" />
+    <ClInclude Include="Engine\Jobber\Technique.h" />
     <ClInclude Include="Engine\Log\Log.h" />
     <ClInclude Include="Engine\Macros\defines.h" />
     <ClInclude Include="Engine\Macros\dxerr.h" />
@@ -120,6 +132,7 @@
     <ClInclude Include="Engine\Parser\Bindable\DynamicConstant.h" />
     <ClInclude Include="Engine\Parser\Bindable\LayoutCodex.h" />
     <ClInclude Include="Engine\Parser\Bindable\Sampler.h" />
+    <ClInclude Include="Engine\Parser\Bindable\Stencil.h" />
     <ClInclude Include="Engine\Parser\Bindable\TransformCbufDoubleboi.h" />
     <ClInclude Include="Engine\Parser\Drawable\Texture.h" />
     <ClInclude Include="Engine\Parser\TexturePreprocessor.h" />

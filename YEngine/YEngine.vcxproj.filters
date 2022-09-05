@@ -64,6 +64,9 @@
     <Filter Include="Engine\Scripts">
       <UniqueIdentifier>{70db1ed6-71d8-42c7-be3e-64ecc2c54e54}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Jobber">
+      <UniqueIdentifier>{575b528e-fbb7-4fb4-8fed-eac60fb43407}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine\Exception.cpp">
@@ -212,6 +215,21 @@
     </ClCompile>
     <ClCompile Include="Engine\Parser\Bindable\LayoutCodex.cpp">
       <Filter>Engine\Parser\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Testing.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Jobber\NullPixelShader.cpp">
+      <Filter>Engine\Jobber</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Jobber\Step.cpp">
+      <Filter>Engine\Jobber</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Jobber\Technique.cpp">
+      <Filter>Engine\Jobber</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Jobber\Job.cpp">
+      <Filter>Engine\Jobber</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -430,6 +448,30 @@
     </ClInclude>
     <ClInclude Include="Engine\Parser\Bindable\ConstantBuffersEx.h">
       <Filter>Engine\Parser\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Parser\Bindable\Stencil.h">
+      <Filter>Engine\Parser\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Jobber\NullPixelShader.h">
+      <Filter>Engine\Jobber</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Jobber\Pass.h">
+      <Filter>Engine\Jobber</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Jobber\Step.h">
+      <Filter>Engine\Jobber</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Jobber\Technique.h">
+      <Filter>Engine\Jobber</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Jobber\FrameCommander.h">
+      <Filter>Engine\Jobber</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Jobber\Job.h">
+      <Filter>Engine\Jobber</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\BindableCommon.h">
+      <Filter>Engine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,17 +1,16 @@
 #include "Topology.h"
 #include <Parser/Bindable/BindableCodex.h>
-//#include "BindableCodex.h"
 
 namespace Bind
 {
-	Topology::Topology(Graphics& gfx, D3D11_PRIMITIVE_TOPOLOGY type)
+	Topology::Topology( Graphics& gfx,D3D11_PRIMITIVE_TOPOLOGY type )
 		:
-		type(type)
+		type( type )
 	{}
 
-	void Topology::Bind(Graphics& gfx) noexcept
+	void Topology::Bind( Graphics& gfx ) noexcept
 	{
-		GetContext(gfx)->IASetPrimitiveTopology(type);
+		GetContext( gfx )->IASetPrimitiveTopology( type );
 	}
 	std::shared_ptr<Topology> Topology::Resolve( Graphics& gfx,D3D11_PRIMITIVE_TOPOLOGY type )
 	{

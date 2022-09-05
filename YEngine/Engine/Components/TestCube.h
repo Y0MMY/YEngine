@@ -1,15 +1,18 @@
 #pragma once
 #include <Parser/Drawable/Drawable.h>
+#include <Parser/Bindable/Bindable.h>
+#include <Parser/Bindable/IndexBuffer.h>
 
 class TestCube : public Drawable
 {
 public:
-	TestCube(Graphics& gfx, float size);
-	void SetPos(DirectX::XMFLOAT3 pos) noexcept;
-	void SetRotation(float roll, float pitch, float yaw) noexcept;
+	TestCube( Graphics& gfx,float size );
+	void SetPos( DirectX::XMFLOAT3 pos ) noexcept;
+	void SetRotation( float roll,float pitch,float yaw ) noexcept;
 	DirectX::XMMATRIX GetTransformXM() const noexcept override;
-	void SpawnControlWindow(Graphics& gfx) noexcept;
+	void SpawnControlWindow( Graphics& gfx,const char* name ) noexcept;
 private:
+	std::vector<std::shared_ptr<Bind::Bindable>> outlineEffect;
 	struct PSMaterialConstant
 	{
 		float specularIntensity = 0.1f;
@@ -21,4 +24,4 @@ private:
 	float roll = 0.0f;
 	float pitch = 0.0f;
 	float yaw = 0.0f;
-};
+};;

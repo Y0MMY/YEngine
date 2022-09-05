@@ -330,6 +330,7 @@ bool FontImporter::LoadFromFile( Graphics& gfx,Font* font,const std::string& fil
 
     // Create a texture with of font atlas and a texture of the font outline atlas
     {
+
         vbuf.Clear();
         using namespace Bind;
         vbuf.EmplaceBack( XMFLOAT3{ 1,1,1 }, XMFLOAT4{  }, XMFLOAT4{ } );
@@ -339,27 +340,36 @@ bool FontImporter::LoadFromFile( Graphics& gfx,Font* font,const std::string& fil
         m_indices.push_back(1);
         m_indices.push_back(2);
 
-        AddBind(v = Bind::VertexBuffer::Resolve( gfx, "", vbuf ) );
-        AddBind(i = Bind::IndexBuffer::Resolve( gfx, "", m_indices ) );
+        v = pVertices = VertexBuffer::Resolve(  gfx, "", vbuf );
+	    i = pIndices = IndexBuffer::Resolve( gfx, "", m_indices );
+	    pTopology = Topology::Resolve( gfx,D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST );
+	
+	    {
+		    Technique standard;
+		    {
+			    Step only( 0 );
 
-        AddBind(std::make_shared<Bind::Texture>(gfx, atlas_width , atlas_height / (GLYPH_END - GLYPH_START), (GLYPH_END - GLYPH_START), mip_atlas, 0u));
-        AddBind(Bind::Sampler::Resolve(gfx));
+			    only.AddBindable( std::make_shared<Texture>( gfx, atlas_width , atlas_height / (GLYPH_END - GLYPH_START), (GLYPH_END - GLYPH_START), mip_atlas, 0u ) );
+			    only.AddBindable( Sampler::Resolve( gfx ) );
 
-        auto pvs = VertexShader::Resolve( gfx,"Engine\\assets\\shaders\\TextVS.hlsl" );
-	    auto pvsbc = pvs->GetBytecode();
-	    AddBind( std::move( pvs ) );
+			    auto pvs = VertexShader::Resolve( gfx,"Engine\\assets\\shaders\\TextVS.hlsl" );
+			    auto pvsbc = pvs->GetBytecode();
+			    only.AddBindable( std::move( pvs ) );
 
-	    AddBind( PixelShader::Resolve( gfx,"Engine\\assets\\shaders\\TextPS.hlsl" ) );
+			    only.AddBindable( PixelShader::Resolve( gfx,"Engine\\assets\\shaders\\TextPS.hlsl" ) );
 
-	    AddBind( PixelConstantBuffer<PSMaterialConstant>::Resolve( gfx,pmc ) );
+			    only.AddBindable( PixelConstantBuffer<PSMaterialConstant>::Resolve( gfx,pmc ) );
 
-        AddBind(VertexConstantBuffer<VSResolution>::Resolve( gfx, res ) );
+                only.AddBindable( VertexConstantBuffer<VSResolution>::Resolve( gfx, res ) );
 
-	    AddBind( InputLayout::Resolve(gfx, vbuf.GetLayout(), pvsbc ) );
+			    only.AddBindable( InputLayout::Resolve( gfx, vbuf.GetLayout(), pvsbc ) );
 
-        AddBind( Blender::Resolve( gfx, true ) );
-	    AddBind( Topology::Resolve(gfx, D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST ) );
-        
+                only.AddBindable( Blender::Resolve( gfx, true ) ) ;
+
+			    standard.AddStep( std::move( only ) );
+		    }
+		    AddTechnique( std::move( standard ) );
+	    }
 	 
     }
     return true;

@@ -100,59 +100,41 @@ namespace Dcb
 	#undef X
 
 	
-	// LayoutElements instances form a tree that describes the layout of the data buffer
-	// supporting nested aggregates of structs and arrays
 	class LayoutElement
 	{
 	private:
-		// this forms the polymorpic base for extra data that Struct and Array have
+		
 		struct ExtraDataBase
 		{
 			virtual ~ExtraDataBase() = default;
 		};
-		// friend relationships are used liberally throught the DynamicConstant system
-		// instead of seeing the various classes in this system as encapsulated decoupled
-		// units, they must be viewed as aspect of one large monolithic system
-		// the reason for the friend relationships is generally so that intermediate
-		// classes that the client should not create can have their constructors made
-		// private, so that Finalize() cannot be called on arbitrary LayoutElements, etc.
+	
 		friend class RawLayout;
 		friend struct ExtraData;
 	public:
-		// get a string signature for this element (recursive); when called on the root
-		// element of a layout tree, generates a uniquely-identifying string for the layout
+
 		std::string GetSignature() const noxnd;
-		// Check if element is "real"
 		bool Exists() const noexcept;
-		// calculate array indexing offset
 		std::pair<size_t,const LayoutElement*> CalculateIndexingOffset( size_t offset,size_t index ) const noxnd;
-		// [] only works for Structs; access member (child node in tree) by name
 		LayoutElement& operator[]( const std::string& key ) noxnd;
 		const LayoutElement& operator[]( const std::string& key ) const noxnd;
-		// T() only works for Arrays; gets the array type layout object
-		// needed to further configure an array's type
 		LayoutElement& T() noxnd;
 		const LayoutElement& T() const noxnd;
-		// offset based- functions only work after finalization!
 		size_t GetOffsetBegin() const noxnd;
 		size_t GetOffsetEnd() const noxnd;
-		// get size in bytes derived from offsets
 		size_t GetSizeInBytes() const noxnd;
-		// only works for Structs; add LayoutElement to struct
 		LayoutElement& Add( Type addedType,std::string name ) noxnd;
 		template<Type typeAdded>
 		LayoutElement& Add( std::string key ) noxnd
 		{
 			return Add( typeAdded,std::move( key ) );
 		}
-		// only works for Arrays; set the type and the # of elements
 		LayoutElement& Set( Type addedType,size_t size ) noxnd;
 		template<Type typeAdded>
 		LayoutElement& Set( size_t size ) noxnd
 		{
 			return Set( typeAdded,size );
 		}
-		// returns offset of leaf types for read/write purposes w/ typecheck in Debug
 		template<typename T>
 		size_t Resolve() const noxnd
 		{
@@ -348,6 +330,17 @@ namespace Dcb
 		bool Exists() const noexcept;
 		ElementRef operator[]( const std::string& key ) const noxnd;
 		ElementRef operator[]( size_t index ) const noxnd;
+		// optionally set value if not an empty Ref
+		template<typename S>
+		bool SetIfExists(const S& val) noxnd
+		{
+			if (Exists())
+			{
+				*this = val;
+				return true;
+			}
+			return false;
+		}
 		Ptr operator&() const noxnd;
 		// conversion for reading/writing as a supported SysType
 		template<typename T>

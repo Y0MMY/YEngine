@@ -5,6 +5,7 @@
 #include <Parser/Bindable/VertexBuffer.h>
 #include <Parser/Bindable/Shaders.h>
 #include <Parser/Drawable/Texture.h>
+#include <Testing.cpp>
 
 namespace dx = DirectX;
 
@@ -17,11 +18,14 @@ App::App(const std::string& commandLine)
 	text_pos (  -( 1600 * 25)  + 5.0f, 900 * 25 - font.GetSize() - 2.0f )
 {
 
-	bluePlane.SetPos( cam.GetPos() );
-	redPlane.SetPos( cam.GetPos() );
+	/*bluePlane.SetPos( cam.GetPos() );
+	redPlane.SetPos( cam.GetPos() );*/
 
 	font.SetSize( 9 );
 	font.SetPos( cam.GetPos() );
+
+	cube.SetPos( { 4.0f,0.0f,0.0f } );
+	cube2.SetPos( { 0.0f,4.0f,0.0f } );
 
 	wnd.Gfx().SetProjection( dx::XMMatrixPerspectiveLH( 1.0f, 3.0f / 4.0f, 0.5f, 400.0f ) );
 
@@ -49,8 +53,10 @@ void App::DoFrame()
 	wnd.Gfx().BeginFrame(0.07f, 0.0f, 0.12f);
 	wnd.Gfx().SetCamera(cam.GetMatrix());
 
-	Binds();
-	DrawModels();
+	light.Bind( wnd.Gfx(),cam.GetMatrix() );
+	
+	Execute();
+	fc.Execute( wnd.Gfx() );
 
 	while (const auto e = wnd.kbd.ReadKey())
 	{
@@ -122,30 +128,35 @@ void App::DoFrame()
 
 	// present
 	wnd.Gfx().EndFrame();
+	fc.Reset();
+
 	profiler.FrameTime();
+
 }
 
-void App::Binds()
+void App::Execute()
 {
-	light.Bind(wnd.Gfx(), cam.GetMatrix());
-}
-
-void App::DrawModels()
-{
-
-	light.Draw(wnd.Gfx());
-	sponza.Draw(wnd.Gfx());
-	bluePlane.Draw( wnd.Gfx() );
-	redPlane.Draw( wnd.Gfx() );
-
-	font.SetText( wnd.Gfx(), profiler.GetMetrics(), { text_pos }, XMFLOAT4(0.8f, 0.8f, 0.8f, 1.0f));
+	light.Submit( fc );
+	cube.Submit(fc);
+	cube2.Submit( fc );
+	font.SetText( wnd.Gfx(), fc, profiler.GetMetrics(), { text_pos }, XMFLOAT4( 0.8f, 0.8f, 0.8f, 1.0f ) );
 }
 
 void App::ShowWindows()
 {
 	cam.SpawnControlWindow();
 	light.SpawnControlWindow();
-	sponza.ShowWindow(wnd.Gfx(), "Sponza");
-	bluePlane.SpawnControlWindow( wnd.Gfx(),"Blue Plane" );
-	redPlane.SpawnControlWindow( wnd.Gfx(),"Red Plane" );
+	cube.SpawnControlWindow( wnd.Gfx(),"Cube 1" );
+	cube2.SpawnControlWindow( wnd.Gfx(),"Cube 2" );
 }
+
+//
+//void App::DrawModels()
+//{
+//	//light.Submit( fc );
+//	//cube.Submit( fc );
+//	//cube2.Submit( fc );
+//	//
+//	////font.SetText( wnd.Gfx(), profiler.GetMetrics(), { text_pos }, XMFLOAT4(0.8f, 0.8f, 0.8f, 1.0f));
+//	//fc.Execute( wnd.Gfx() );
+//}

@@ -59,7 +59,7 @@ bool Font::LoadFromFile( Graphics& gfx, const std::string& file_path )
 	return true;
 }
 
-void Font::SetText( Graphics& gfx, std::string& text, Vector2 position, XMFLOAT4 color )
+void Font::SetText(  Graphics& gfx, FrameCommander& frame, std::string& text, Vector2 position, XMFLOAT4 color )
 {
 	if( !text.size() ) return;
 
@@ -108,11 +108,11 @@ void Font::SetText( Graphics& gfx, std::string& text, Vector2 position, XMFLOAT4
 
 
             fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x,					pen.y + glyph.offset_y,					0.0f},		XMFLOAT4 { color },			XMFLOAT4 { x, y,(float)character,0 } );       // top left
-            fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x + glyph.width,	pen.y + glyph.offset_y - glyph.height,	0.0f },	XMFLOAT4 { color },			XMFLOAT4  {x + xw, y + yw,(float)character,0 } );    // bottom right
+            fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x + glyph.width,	pen.y + glyph.offset_y - glyph.height,	0.0f },		XMFLOAT4 { color },			XMFLOAT4  {x + xw, y + yw,(float)character,0 } );    // bottom right
             fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x,					pen.y + glyph.offset_y - glyph.height,	0.0f },		XMFLOAT4 { color },			XMFLOAT4 {x, y + yw,(float)character,0 } );    // Dbottom left
             // Second triangle in quad.
             fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x,					pen.y + glyph.offset_y,					0.0f },		XMFLOAT4 { color },			XMFLOAT4 { x, y,(float)character,0 });       // top left
-            fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x + glyph.width,	pen.y + glyph.offset_y,					0.0f },	XMFLOAT4 { color },			XMFLOAT4 { x + xw, y,(float)character,0 } );       // top right
+            fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x + glyph.width,	pen.y + glyph.offset_y,					0.0f },		XMFLOAT4 { color },			XMFLOAT4 { x + xw, y,(float)character,0 } );       // top right
             fi.vbuf.EmplaceBack( XMFLOAT3{ pen.x + glyph.offset_x + glyph.width,	pen.y + glyph.offset_y - glyph.height,	0.0f },		XMFLOAT4 { color },			XMFLOAT4 {x + xw, y + yw,(float)character,0 } );    // bottom right
 
             // Advance
@@ -126,10 +126,12 @@ void Font::SetText( Graphics& gfx, std::string& text, Vector2 position, XMFLOAT4
 
 	for (auto c = 0; c < fi.vbuf.Size(); c++)
 	{
-		m_indices.push_back(c);
+		m_indices.push_back( c );
 	}
 	
-	fi.UpdateBuffers(gfx, fi.vbuf, m_indices);
-	fi.Draw(gfx);
+	fi.UpdateBuffers( gfx, fi.vbuf, m_indices );
+
+	fi.Submit( frame );
+
 	fi.vbuf.Clear();
 }

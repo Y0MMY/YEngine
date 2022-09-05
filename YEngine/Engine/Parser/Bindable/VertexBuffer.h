@@ -12,7 +12,7 @@ namespace Bind
 		VertexBuffer( Graphics& gfx, const std::string& tag, const std::vector<unsigned short>& indices );
 		VertexBuffer( Graphics& gfx,const Dvtx::VertexBuffer& vbuf );
 		void Bind( Graphics& gfx ) noexcept override;
-
+		const Dvtx::VertexLayout& GetLayout() const noexcept;
 		void Update( Graphics& gfx, const Dvtx::VertexBuffer& vbuf );
 		template<class T>
 		void Update(Graphics& gfx, const std::vector<T>& vertices)
@@ -47,5 +47,6 @@ namespace Bind
 		std::string tag;
 		UINT stride;
 		Microsoft::WRL::ComPtr<ID3D11Buffer> pVertexBuffer;
+		Dvtx::VertexLayout layout;
 	};
 }
